@@ -3,7 +3,6 @@ class StaticPagesController < ApplicationController
 
 
   def home
-        @spanish = false 
   end
 
   def blog

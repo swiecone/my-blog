@@ -1,96 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% if @spanish = false %>
-    <title>My Blog</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
+  <title>MyBlog</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class='container'>
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class='container'>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-        <%= link_to root_path, class: 'navbar-brand' do %>
-        <i class="fa fa-users"></i>
-     		  Alex Swiec
-        <% end %>
-      </div>
-      <div class="collapse navbar-collapse" id="main-nav-collapse">
-
-    <!--   Needed Static Pages: Home, Blog , Learnings  ,About, Contact -->
-
-        <ul class="nav navbar-nav navbar-right">
-  	    <li><%= link_to "Language", '#' %></li>
-  		<li><%= link_to "Home", home_path %></li> 
-          <li><%= link_to "Blog", blog_path %></li>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Learning", learning_path %></li>
-          <li><%= link_to "Contact", contact_path %></li>
-
-        </ul>
-      </div><!-- /.navbar-collapse -->
+      <%= link_to root_path, class: 'navbar-brand' do %>
+      <i class="fa fa-users"></i>
+   		  Alex Swiec
+      <% end %>
     </div>
-  </nav>
+    <div class="collapse navbar-collapse" id="main-nav-collapse">
 
- <% elsif spanish = true  %>
+  <!--   Needed Static Pages: Home, Blog , Learnings  ,About, Contact -->
 
-       <title>Mi Blog</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
+      <ul class="nav navbar-nav navbar-right">
+	    <li><%= link_to "Language", '#' %></li>
+		<li><%= link_to "Home", home_path %></li> 
+        <li><%= link_to "Blog", blog_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Learning", learning_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
 
-  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class='container'>
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
 
-        <%= link_to root_path, class: 'navbar-brand' do %>
-        <i class="fa fa-users"></i>
-          Alex Swiec
-        <% end %>
-      </div>
-      <div class="collapse navbar-collapse" id="main-nav-collapse">
 
-    <!--   Needed Static Pages: Home, Blog , Learnings  ,About, Contact -->
-
-        <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Language", '#' %></li>
-      <li><%= link_to "Home", home_path %></li> 
-          <li><%= link_to "Blog", blog_path %></li>
-          <li><%= link_to "Sobre", about_path %></li>
-          <li><%= link_to "Learning", learning_path %></li>
-          <li><%= link_to "Contact", contact_path %></li>
-
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div>
-  </nav>
-
-<% end %> 
-
-  	<div class="container">
-  		<%= yield %>
-  	</div> 
-   
-
+	<div class="container">
+		<%= yield %>
+	</div> 
 
 </body>
 </html>

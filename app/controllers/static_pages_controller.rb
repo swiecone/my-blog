@@ -1,8 +1,14 @@
 class StaticPagesController < ApplicationController
+#    Needed Static Pages: Home, Blog , Learning  ,About, Contact
+
+
   def home
   end
 
-  def help
+  def blog
+  end
+
+  def learning
   end
 
   def about 
@@ -12,3 +18,5 @@ class StaticPagesController < ApplicationController
   end 
 
 end
+
+

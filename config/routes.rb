@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+
+  #    Needed Static Pages: Home, Blog , Learnings  ,About, Contact
   root             'static_pages#home'
-  get 'help'    => 'static_pages#help'
+  get 'home'    => 'static_pages#home'
+  get 'blog'    => 'static_pages#blog'
+  get 'learning'    => 'static_pages#learning'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

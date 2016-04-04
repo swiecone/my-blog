@@ -1,9 +1,9 @@
-class StaticPagesController < ApplicationController
+class SpanishStaticPagesController < ApplicationController
 #    Needed Static Pages: Home, Blog , Learning  ,About, Contact
 
-
+  
   def home
-        @spanish = false 
+    @spanish = true 
   end
 
   def blog
@@ -17,7 +17,5 @@ class StaticPagesController < ApplicationController
 
   def contact 
   end 
-
 end
-
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'learning'    => 'static_pages#learning'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
+  get 'es/home' => 'spanish_static_pages#home'
 
 
 

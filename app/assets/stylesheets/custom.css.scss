@@ -390,3 +390,17 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1;
 }
+
+ .transparentbar {
+        background-repeat:no-repeat;
+        cursor:pointer;
+        outline:none;
+        border:none;
+        box-shadow:none; 
+        background-image: none;
+
+        background-color: transparent;
+        background: transparent;
+        border-color: transparent;
+
+    }

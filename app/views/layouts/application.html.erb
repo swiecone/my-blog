@@ -32,15 +32,20 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                            <!-- 
-                        <a href="index.html">Home</a>
-                        --> 
-                        <%= link_to "Home", root_path %>
+                        <li>
+                        <%= link_to "Language", root_path %></a>
                     </li>
-                     <li>
-                        <a href="#">Language</a>
-                    </li>
+
+                   <!-- Not sure how to make the scroldown transparent...
+
+                    <li class="dropdown trans-box">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                         <li><a href="#">English</a></li>
+                        <li><a href="#">Spanish</a></li>
+                     </ul>
+                  </li> -->
+                
                       <li>
                         <%= link_to "Blog", post_path(1) %></a>
                     </li>

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get 'learning'    => 'static_pages#learning'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'   
-  get 'post'   => 'static_pages#post'
+  # get 'post'   => 'static_pages#post'
+
+  resources :post 
 
 
 

@@ -20,6 +20,9 @@ class StaticPagesController < ApplicationController
    def post 
   end 
 
+  def now
+  end 
+
 end
 
 

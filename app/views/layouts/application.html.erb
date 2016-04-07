@@ -1,124 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MyBlog</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  
-  <%= stylesheet_link_tag "/css/clean-blog.min.css" %>
-  <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <%= csrf_meta_tags %>
-</head>
+    <%= render 'layouts/html_header' %>
 
 <body>
-  <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                  <!--
-                <a class="navbar-brand" href="index.html"> Alex Swiec</a>
-            -->
-                <%= link_to "Alex Swiec", root_path, class: "navbar-brand" %>
-            </div>
+    <% @english_language = true %> 
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                        <li>
-                        <%= link_to "Español", root_path %></a>
-                    </li>
-
-                  <!-- 
-                    <li class="dropdown transparentbar">
-                         <a href="#" class="dropdown-toggle dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                         <li><a href="#" class="trans-box">English</a></li>
-                        <li><a href="#" class="trans-box">Spanish</a></li>
-                     </ul>
-                  </li> -->
-                
-                      <li>
-                        <%= link_to "Blog", post_path(1) %></a>
-                    </li>
-                    <li>
-                        <%= link_to "Learning", learning_path %>
-                    </li>
-
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-
-                    <li>
-                        <a href="now.html">Now</a>
-                    </li>
-                                      <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-
+    <% if @english_language == true %> 
+        <%= render 'layouts/english_navbar' %>
+    
+    <% elsif @english_language == false %> 
+        <%= render 'layouts/espanish_navbar' %>
+    
+    <% end %> 
 
 		<%= yield %>
 
- <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="https://twitter.com/swiecone">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://es.linkedin.com/in/aswiec">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/swiecone">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Alex Swiec 2016</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<!-- jQuery -->
-    <script src="/javascripts/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-    <script src="/javascripts/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-    <script src="/javascripts/clean-blog.min.js"></script>
+    <%= render 'layouts/footer' %>
+    <%= render 'layouts/javascripts' %>
 
 </body>
 </html>

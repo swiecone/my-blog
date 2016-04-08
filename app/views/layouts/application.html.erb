@@ -3,9 +3,9 @@
     <%= render 'layouts/html_header' %>
 
 <body>
-    <% #@english_language = true %> 
+    <% @english_language = true %> 
    
-    <% if english_language? %> 
+    <% if @english_language == true %> 
         <%= render 'layouts/english_navbar' %>
     
     <% elsif %> 

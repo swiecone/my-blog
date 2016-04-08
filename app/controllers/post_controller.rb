@@ -1,7 +1,6 @@
 class PostController < ApplicationController
 
-	def show
-		
+	def mindfulrm
 	end
 
 end

@@ -3,15 +3,8 @@
     <%= render 'layouts/html_header' %>
 
 <body>
-    <% @english_language = true %> 
    
-    <% if @english_language == true %> 
-        <%= render 'layouts/english_navbar' %>
-    
-    <% elsif %> 
-        <%= render 'layouts/espanish_navbar' %>
-    
-    <% end %> 
+        <%= render 'layouts/navbar' %>
 
 		<%= yield %>
 

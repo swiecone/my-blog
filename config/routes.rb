@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'english' => 'static_pages#english'
   get 'spanish' => 'static_pages#spanish'
 
+  # posts 
+  get 'mindfulrw' => 'post#mindfulrw'
 
 
   resources :post 

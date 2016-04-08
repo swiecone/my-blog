@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'   
   get 'post'   => 'static_pages#post'
-  get 'now' =>    'static_pages#now'
-  get 'english' =>    'language#english'
-  get 'spanish' =>    'language#spanish'
+  get 'now' => 'static_pages#now'
+  get 'english' => 'static_pages#english'
+  get 'spanish' => 'static_pages#spanish'
 
 
 

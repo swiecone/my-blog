@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 #    Needed Static Pages: Home, Blog , Learning  ,About, Contact
-
-
+  #@english_language = true
+  
   def home
   end
 
@@ -21,6 +21,18 @@ class StaticPagesController < ApplicationController
   end 
 
   def now
+  end 
+
+  def english
+    @english_language = true
+    
+    redirect_to root_path
+  end  
+
+  def spanish
+    @english_language = false
+    
+    redirect_to root_path
   end 
 
 end

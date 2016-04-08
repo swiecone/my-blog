@@ -3,12 +3,12 @@
     <%= render 'layouts/html_header' %>
 
 <body>
-    <% @english_language = true %> 
-
-    <% if @english_language == true %> 
+    <% #@english_language = true %> 
+   
+    <% if english_language? %> 
         <%= render 'layouts/english_navbar' %>
     
-    <% elsif @english_language == false %> 
+    <% elsif %> 
         <%= render 'layouts/espanish_navbar' %>
     
     <% end %> 

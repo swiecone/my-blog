@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # posts 
   get 'mindfulrw' => 'post#mindfulrw'
+  get 'ux' => 'post#ux'
 
 
   resources :post 

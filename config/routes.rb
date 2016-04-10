@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'mindfulrw' => 'post#mindfulrw'
   get 'ux' => 'post#ux'
   get 'joincs' => 'post#joincs'
+  get 'heavydoc' => 'post#heavydoc'
 
 
 

@@ -6,4 +6,13 @@ class PostController < ApplicationController
 	def ux
 	end
 
+	def heavydoc
+	end
+
+	def joincs
+	end
+
+	def heavydoc
+	end
+
 end

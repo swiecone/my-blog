@@ -15,6 +15,9 @@ class PostController < ApplicationController
 	def heavydoc
 	end
 
+	def londonevent
+	end 
+
 
 
 end

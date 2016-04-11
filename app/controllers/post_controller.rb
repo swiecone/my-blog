@@ -15,4 +15,6 @@ class PostController < ApplicationController
 	def heavydoc
 	end
 
+
+
 end

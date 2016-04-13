@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'ux' => 'post#ux'
   get 'joincs' => 'post#joincs'
   get 'heavydoc' => 'post#heavydoc'
-
+  get 'loop' => 'post#loop'
 
 
 

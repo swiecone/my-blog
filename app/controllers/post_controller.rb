@@ -15,10 +15,11 @@ class PostController < ApplicationController
 	def heavydoc
 	end
 
-	def looop
+	def loop
 	end 
 
-
+	def consciouspm
+	end
 
 
 end

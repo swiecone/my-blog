@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'joincs' => 'post#joincs'
   get 'heavydoc' => 'post#heavydoc'
   get 'loop' => 'post#loop'
+  get 'consciouspm' => 'post#consciouspm'
 
 
 

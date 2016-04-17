@@ -23,6 +23,9 @@ class StaticPagesController < ApplicationController
   def now
   end 
 
+  def advise
+  end 
+
   def english
     @english_language = true
     

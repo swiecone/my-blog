@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'heavydoc' => 'post#heavydoc'
   get 'loop' => 'post#loop'
   get 'consciouspm' => 'post#consciouspm'
+  get 'language' => 'post#language'
 
 
 

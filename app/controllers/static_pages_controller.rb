@@ -27,6 +27,12 @@ class StaticPagesController < ApplicationController
   def advise
   end 
 
+  def books
+  end 
+
+  def moocs
+  end 
+
   def language
   end 
 

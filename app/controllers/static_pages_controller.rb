@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def learning
+    
   end
 
   def about 
@@ -40,6 +41,9 @@ class StaticPagesController < ApplicationController
     
     redirect_to root_path
   end 
+
+ private 
+
 
 end
 

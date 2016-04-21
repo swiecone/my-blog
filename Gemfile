@@ -22,6 +22,9 @@ gem 'font-awesome-sass', '4.2.0'
 # Gem Font Awesome to have awesome icons
 gem 'font-awesome-sass', '4.2.0'
 
+# Adding google books api
+gem 'google_book'
+
 
 
 # Use jquery as the JavaScript library

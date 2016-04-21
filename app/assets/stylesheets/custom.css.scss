@@ -405,14 +405,32 @@ body {
 
     }
 
-figure {
-    display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 40px;
-    -webkit-margin-end: 40px;
+#booklist {
+  figure {
+    img {
+      float: left;
+      margin-right: 2em;
+    }
+  }
 }
 
-h4 .book-title {
-  margin-top: 0px;
+#booklist figure {
+  margin: 0 0 8em 0;
 }
+body#onebook figure {
+  margin: 0;
+}
+body#interview blockquote {
+  margin: 0;
+}
+body#home dt, body#code dt, body#music dt {
+  font-weight: bold;
+}
+dl#tweetlist dt {
+  font-weight: normal;
+}
+
+.bookimage{
+    float: left;
+    padding-right: 20px;
+ }

@@ -1,0 +1,112 @@
+ <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/learning-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Always Learning</h1>
+                        <hr class="small">
+                        <span class="subheading">This is what I've learned until today</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row text-justify">
+            
+                <p>I believe in continuous education, and here you can see my <a href="https://trello.com/b/IV1Y1iUP/what-i-m-learning">Study Roadmap</a> inside a Trello Board. In the learning section you will find what I'm currenly studying, which can be in the  form or reading a book, or studying a MOOC (Massive Open Online Course).
+                </p>
+                <p>
+                If you want to see what I have been reading or studying in the past, just click on <a href="books.html"> Books </a> or <a href="moocs.html">MOOCs </a> titles or  <a href="books.html">More Books </a> or  <a href="moocs.html">More MOOCs</a> buttons, and you will get all the list.  
+                </p>
+
+                <!--
+                <p> If you want to see my personal notes in regards to the book or MOOC, click on the title of the specific content</p>
+                -->
+
+                <h2><a href="books.html"> Books </a> </h2>
+                <br>
+        
+        </div>
+     
+        <div class="row">
+            <!-- Main Content -->
+            <% @books.each do |book| %>
+                <div class="container">
+                        <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07">
+                            <span style="float:left;padding-right: 15px;"> <%= image_tag book_thumbnail(book) %></span>
+                            <figcaption>
+                                <h3><a href="#"><%= book_title(book) %></a>
+
+
+                                    <% if book.status == "In Progress" %>
+                                        <span class="label label-warning" style="margin-left: 15px;
+"><%= book.status %></span></h3> 
+                                    <% else %>
+                                        <span class="label label-success" style="margin-left: 15px;
+"><%= book.status %></span></h3> 
+                                    <% end %>
+                        
+
+                                <p>ISBN: <%= book.isbn %> READ: 
+                                    <% if book.status == "In Progress" %>
+                                        <span style="font-style: italic">Currently Reading </span>
+                                    <% else %>
+                                        <%= book.read %> 
+                                    <% end %> 
+                                    RATING: <%= book.rating %>/10</p>
+                                <p><%= book.shortsummary %> </p>
+                            </figcaption>
+                        </figure>
+            <% end %>
+
+               <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="books.html">More Books &rarr;</a>
+                    </li>
+                </ul>
+       </div>
+
+<div class="row">
+    <br>
+        <h2> <a href="moocs.html">MOOCs </a></h2>
+
+           <figure class="amooc">
+              
+                            <figcaption>
+                                <h3><a href="#">   <a href="https://www.coursera.org/learn/questionnaire-design">Questionnaire Design </a> </a>
+
+<span class="label label-warning" style="margin-left: 15px;
+">In Progress</span></h3> 
+                              
+                        
+
+                                <p>PLATFORM: Coursera UNI: Michigan STUDIED: 
+                                        <span style="font-style: italic">Currently Studying </span>
+                                   
+                                    RATING: 7/10</p>
+                                <p>    This course will cover the basic elements of designing and evaluating questionnaires. We will review the process of responding to questions, challenges and options for asking questions about behavioral frequencies, practical techniques for evaluating questions, mode specific questionnaire characteristics, and review methods of standardized and conversational interviewing.
+</p>
+                            </figcaption>
+                        </figure>
+
+     
+ 
+        
+        
+
+          <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="moocs.html">More MOOCs &rarr;</a>
+                    </li>
+                </ul>
+                
+     </div>
+
+    <hr>

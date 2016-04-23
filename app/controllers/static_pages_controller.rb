@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def learning
-        @books = Book.all
+        @books = Book.where(status: "In Progress")
   end
 
   def about 

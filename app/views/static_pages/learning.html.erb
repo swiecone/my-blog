@@ -37,7 +37,7 @@
             <!-- Main Content -->
             <% @books.each do |book| %>
                 <div class="container">
-                        <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07">
+                        <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07" style="margin-bottom: 50px">
                             <span style="float:left;padding-right: 15px;"> <%= image_tag book_thumbnail(book) %></span>
                             <figcaption>
                                 <h3><a href="#"><%= book_title(book) %></a>
@@ -76,7 +76,7 @@
     <br>
         <h2> <a href="moocs.html">MOOCs </a></h2>
 
-           <figure class="amooc">
+           <figure class="amooc" style="margin-bottom: 50px">
               
                             <figcaption>
                                 <h3><a href="#">   <a href="https://www.coursera.org/learn/questionnaire-design">Questionnaire Design </a> </a>

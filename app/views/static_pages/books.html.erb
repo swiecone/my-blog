@@ -14,33 +14,30 @@
         </div>
     </header>
 
+<div class="container">
 
     <!-- Main Content -->
      <% @books.each do |book| %>
-                <div class="container">
-                        <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07">
-                            <a href="#" style="float:left;padding-right: 15px;"> <%= image_tag book_thumbnail(book) %></a>
+                        <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07" style="margin-bottom: 100px">
+                            <a href="#" style="float:left;padding-right: 15px;"><%= image_tag book_thumbnail(book)%></a>
                             <figcaption>
-                                <h3><a href="#"><%= book_title(book) %></a>
-
-
-                                    <% if book.status == "In Progress" %>
-                                        <span class="label label-warning" style="margin-left: 15px;
-"><%= book.status %></span></h3> 
-                                    <% else %>
-                                        <span class="label label-success" style="margin-left: 15px;
-"><%= book.status %></span></h3> 
-                                    <% end %>
-                        
-
-                                <p>ISBN: <%= book.isbn %> READ: 
-                                    <% if book.status == "In Progress" %>
-                                        <span style="font-style: italic">Currently Reading </span>
-                                    <% else %>
-                                    <%= book.read %> 
-                                    <% end %> 
-                                    RATING: <%= book.rating %>/10</p>
-                                <p><%= book.shortsummary %> </p>
+                                <h3><a href="#"><%=book_title(book)%></a>
+                 <% if book.status == "In Progress" %>
+                        <span class="label label-warning" style="margin-left: 15px;">
+                            <%= book.status %></span></h3> 
+                 <% else %>
+                        <span class="label label-success" style="margin-left: 15px;">
+                            <%= book.status %></span></h3> 
+                 <% end %>
+                                
+                <p>ISBN: <%= book.isbn %> READ: 
+                    <% if book.status == "In Progress" %>
+                            <span style="font-style: italic">Currently Reading </span>
+                    <% else %>
+                            <%= book.read %> 
+                    <% end %> 
+                        RATING: <%= book.rating %>/10</p>
+                        <p><%= book.shortsummary %></p>
                             </figcaption>
                         </figure>
             <% end %>

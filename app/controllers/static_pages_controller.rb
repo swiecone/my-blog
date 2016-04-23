@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def learning
-    
+        @books = Book.all
   end
 
   def about 

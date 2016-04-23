@@ -16,35 +16,18 @@
 
 
     <!-- Main Content -->
-    <div class="container">
+    <% @books.each do |book| %>
+        <div class="container">
                 <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07">
-                    <a href="#" style="float:left;padding-right: 15px;"> <%= image_tag book_thumbnail %></a>
+                    <a href="#" style="float:left;padding-right: 15px;"> <%= image_tag book_thumbnail(book) %></a>
                     <figcaption>
-                        <h3><a href="/book/SoGood">So Good They Can't Ignore You - by Cal Newport</a></h3>
-                        <p>ISBN: 1455509124 READ: 2012-10-07 RATING: 10/10</p>
-                        <p>Shockingly smart thoughts about your career. A MUST-READ for anyone who is not loving their work, wanting to quit their job, and follow their passion, or not sure what to do next.  I'm recommending this many times a week to people who email me with these kinds of questions. Best book I've ever read on the subject.</p>
+                        <h3><a href="/book/SoGood"><%= book_title(book) %></a></h3>
+                        <p>ISBN: <%= book.isbn %> READ: <%= book.read %> RATING: <%= book.rating %>/10</p>
+                        <p><%= book.shortsummary %> </p>
                     </figcaption>
                 </figure>
+    <% end %>
 
-
-                 <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07">
-                    <a href="#" style="float:left;padding-right: 15px;"> <%= image_tag book_thumbnail %></a>
-                    <figcaption>
-                        <h3><a href="/book/SoGood">So Good They Can't Ignore You - by Cal Newport</a></h3>
-                        <p>ISBN: 1455509124 READ: 2012-10-07 RATING: 10/10</p>
-                        <p>Shockingly smart thoughts about your career. A MUST-READ for anyone who is not loving their work, wanting to quit their job, and follow their passion, or not sure what to do next.  I'm recommending this many times a week to people who email me with these kinds of questions. Best book I've ever read on the subject.</p>
-                    </figcaption>
-                </figure>
-         
-                 <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07">
-                    <a href="#" style="float:left;padding-right: 15px;"> <%= image_tag book_thumbnail %></a>
-                    <figcaption>
-                        <h3><a href="/book/SoGood">So Good They Can't Ignore You - by Cal Newport</a></h3>
-                        <p>ISBN: 1455509124 READ: 2012-10-07 RATING: 10/10</p>
-                        <p>Shockingly smart thoughts about your career. A MUST-READ for anyone who is not loving their work, wanting to quit their job, and follow their passion, or not sure what to do next.  I'm recommending this many times a week to people who email me with these kinds of questions. Best book I've ever read on the subject.</p>
-                    </figcaption>
-                </figure>
-                    
 
            </div>
         </div>

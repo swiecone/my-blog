@@ -28,6 +28,7 @@ class StaticPagesController < ApplicationController
   end 
 
   def books
+    @books = Book.all
   end 
 
   def moocs

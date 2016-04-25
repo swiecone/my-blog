@@ -40,7 +40,15 @@
                     <% else %>
                             <%= book.read %> 
                     <% end %> 
-                        RATING: <%= book.rating %>/10</p>
+                        RATING:
+
+                            RATING:
+                                     <% if book.status == "In Progress" %>
+                                        <span style="font-style: italic">tbd. </span>
+                                    <% else %>
+                                        <%= book.rating %>/10
+                                    <% end %> 
+
                         <p><%= book.shortsummary %></p>
                             </figcaption>
                         </figure>

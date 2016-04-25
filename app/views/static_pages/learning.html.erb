@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> 
 
     <!-- Main Content -->
     <div class="container">
@@ -38,9 +38,9 @@
             <% @books.each do |book| %>
                 <div class="container">
                         <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07" style="margin-bottom: 50px">
-                            <span style="float:left;padding-right: 15px;"> <%= image_tag book_thumbnail(book) %></span>
+                            <span style="float:left;padding-right: 15px;"> <%= image_tag book.thumburl %></span>
                             <figcaption>
-                                <h3><a href="#"><%= book_title(book) %></a>
+                                <h3><a href="#"><%= book.title %></a>
 
 
                                     <% if book.status == "In Progress" %>

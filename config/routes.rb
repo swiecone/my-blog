@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'advise' => 'static_pages#advise'
   get 'books' => 'static_pages#books'
   get 'moocs' => 'static_pages#moocs'
+  get 'findabook' => 'static_pages#findabook'
+
 
 
   # posts 

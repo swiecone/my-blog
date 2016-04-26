@@ -1,0 +1,31 @@
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/findabook-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Searching for Book Information</h1>
+                        <hr class="small">
+                        <span class="subheading">This page is meant to search for book information using ISBN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> 
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row text-justify">
+            <div class="col-md-6 col-md-offset-3">
+              <%= form_tag("/search", method: "get") do %>
+                 <%= label_tag(:q, "Search for:") %>
+                 <%= text_field_tag(:q) %>
+                 <%= submit_tag("Search") %>
+              <% end %>
+            </div>
+                
+       </div>
+    </div>
+
+    <hr>

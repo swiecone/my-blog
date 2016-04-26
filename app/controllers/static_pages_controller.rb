@@ -49,6 +49,9 @@ class StaticPagesController < ApplicationController
     redirect_to root_path
   end 
 
+  def findabook
+  end 
+
  private 
 
 

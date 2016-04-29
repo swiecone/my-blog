@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   get 'english' => 'static_pages#english'
   get 'spanish' => 'static_pages#spanish'
   get 'advise' => 'static_pages#advise'
-  get 'books' => 'static_pages#books'
   get 'moocs' => 'static_pages#moocs'
   get 'findabook' => 'static_pages#findabook'
-
+  # get 'books' => 'static_pages#books'
+  
 
 
   # posts 

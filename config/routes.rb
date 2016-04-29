@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   #    Needed Static Pages: Home, Blog , Learnings  ,About, Contact
   root             'static_pages#home'
   get 'home'    => 'static_pages#home'

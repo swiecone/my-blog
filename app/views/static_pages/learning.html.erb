@@ -20,9 +20,7 @@
             
                 <p>I believe in continuous education, and here you can see my <a href="https://trello.com/b/IV1Y1iUP/what-i-m-learning">Study Roadmap</a> inside a Trello Board. In the learning section you will find what I'm currenly studying, which can be in the  form or reading a book, or studying a MOOC (Massive Open Online Course).
                 </p>
-                <p>
-                If you want to see what I have been reading or studying in the past, just click on <a href="books.html"> Books </a> or <a href="moocs.html">MOOCs </a> titles or  <a href="books.html">More Books </a> or  <a href="moocs.html">More MOOCs</a> buttons, and you will get all the list.  
-                </p>
+              
 
                 <!--
                 <p> If you want to see my personal notes in regards to the book or MOOC, click on the title of the specific content</p>
@@ -36,7 +34,7 @@
             <div class="row">
             <!-- Main Content -->
             <% @books.each do |book| %>
-                        <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07" style="margin-bottom: 100px">
+                        <figure style="margin-bottom: 100px">
                             <span style="float:left;padding-right: 15px;"> <%= image_tag book.thumburl %></span>
                             <figcaption>
                                 <h3> <%= link_to "#{book.title}", book_path(book) %>

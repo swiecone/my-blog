@@ -24,7 +24,9 @@
                         <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07" style="margin-bottom: 100px">
                             <a href="#" style="float:left;padding-right: 15px;"><%= image_tag book.thumburl%></a>
                             <figcaption>
-                                <h3><a href="#"><%=book.title %></a>
+                                <h3>
+                                <%= link_to "#{book.title}", book_path(book) %>
+                            </a>
                  <% if book.status == "In Progress" %>
                         <span class="label label-warning" style="margin-left: 15px;">
                             <%= book.status %></span></h3> 

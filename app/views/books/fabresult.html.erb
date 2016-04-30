@@ -7,7 +7,7 @@
                     <div class="page-heading">
                         <h1>Book Search Result </h1>
                         <hr class="small">
-                        <span class="subheading">Book Title, Thumbnail URL and Image</span>
+                        <span class="subheading">Book Title, ISBN, Thumbnail URL and Image</span>
                     </div>
                 </div>
             </div>
@@ -20,6 +20,11 @@
         <p>
 			<strong>Book Title: </strong><%= book_title(@isbn) %>
 		</p>
+
+	    <p>
+			<strong>ISBN: </strong><%= @isbn %>
+		</p>
+
 		<p>
 			<strong>Book URL Thumbnail: </strong><%= book_thumbnail(@isbn) %>
 		</p>

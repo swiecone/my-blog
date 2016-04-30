@@ -16,6 +16,7 @@
 
     <!-- Main Content -->
     <div class="container">
+    	<%= render 'shared/errors', obj: @book %>
         <div class="row text-justify">
             <div class="col-md-6 col-md-offset-3">
              <%= form_for @book, url: books_path  do |f| %>

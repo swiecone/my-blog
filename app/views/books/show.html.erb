@@ -7,9 +7,37 @@
                     <div class="page-heading">
                         <h1><%= @book.title %></h1>
                         <hr class="small">
-                        <span class="subheading"></span>
+                        <span class="subheading">
+                                
+                <p>ISBN: <%= @book.isbn %> READ: 
+                    <% if @book.status == "In Progress" %>
+                            <span style="font-style: italic">Currently Reading </span>
+                    <% else %>
+                            <%= @book.read %> 
+                    <% end %> 
+                        RATING:
+
+                            RATING:
+                                     <% if @book.status == "In Progress" %>
+                                        <span style="font-style: italic">tbd. </span>
+                                    <% else %>
+                                        <%= @book.rating %>/10
+                                    <% end %> 
+
+                      
+
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </header> 
+
+<div class="container">
+  <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07" style="margin-bottom: 100px">
+                            <a href="#" style="float:left;padding-right: 15px;"><%= image_tag @book.thumburl%></a>
+                            <figcaption>
+                   <p><%= @book.shortsummary %></p>
+                            </figcaption>
+                        </figure>
+</div>

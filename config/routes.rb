@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   get 'spanish' => 'static_pages#spanish'
   get 'advise' => 'static_pages#advise'
   get 'moocs' => 'static_pages#moocs'
-  get 'findabook' => 'static_pages#findabook'
+  get 'findabook' => 'books#findabook'
+  post 'findabook' => 'books#fabresult'
   
 
 

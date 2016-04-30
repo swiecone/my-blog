@@ -1,8 +1,8 @@
 module ApplicationHelper
 	
-	def book_thumbnail(book)
+	def book_thumbnail(isbn)
 	   	 b = GoogleBook::Book.new(:api_key => "AIzaSyDE0VW_-8EjjPrUJgYbZpjBylZS0w-wj2M") 
-    	 b.search("#{book.isbn}",5) 
+    	 b.search("#{isbn}",5) 
     	 if b == nil
     	 	return nil
     	 else 
@@ -10,9 +10,9 @@ module ApplicationHelper
  	     end 
 	end
 
-	def book_title(book)
+	def book_title(isbn)
 		 b = GoogleBook::Book.new(:api_key => "AIzaSyDE0VW_-8EjjPrUJgYbZpjBylZS0w-wj2M") 
-   		 b.search("#{book.isbn}",5) 
+   		 b.search("#{isbn}",5) 
  		
  		 if b == nil
     	 	return nil

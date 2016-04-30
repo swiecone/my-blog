@@ -15,7 +15,7 @@ class BooksController < ApplicationController
 
 
     if @book.save
-      flash[:success] = "Your Book was created successfuly!"
+      flash[:success] = "Your Book was created successfully!"
       redirect_to books_path
     else
       render :new
@@ -28,6 +28,11 @@ class BooksController < ApplicationController
   
   def findabook
   end 
+
+  def fabresult
+    @isbn = params[:q]  
+  end
+
 
 private
   def books_params

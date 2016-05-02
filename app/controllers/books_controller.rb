@@ -12,7 +12,6 @@ class BooksController < ApplicationController
 
   def create 
     @book = Book.new(books_params)
-    debugger
 
     
     @status = params[:status] 
@@ -22,7 +21,7 @@ class BooksController < ApplicationController
     @book.read = @read.to_s   
 
     @thumburl = params[:thumburl]
-
+    debugger
 
 
     if @book.save

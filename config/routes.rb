@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'learning'    => 'static_pages#learning'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'  
-  post 'contact' => 'static_pages#thankyou' 
+  post '/mail/contact_me.php' => 'static_pages#thankyou' 
   get 'post'   => 'static_pages#post'
   get 'now' => 'static_pages#now'
   get 'english' => 'static_pages#english'

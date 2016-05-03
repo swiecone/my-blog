@@ -52,6 +52,9 @@ class StaticPagesController < ApplicationController
   def findabook
   end 
 
+  def thankyou
+  end 
+
  private 
 
 

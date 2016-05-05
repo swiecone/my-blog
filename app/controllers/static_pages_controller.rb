@@ -2,6 +2,8 @@ class StaticPagesController < ApplicationController
 #    Needed Static Pages: Home, Blog , Learning  ,About, Contact
   #@english_language = true
   
+  skip_before_filter :verify_authenticity_token
+
   def home
   end
 
@@ -53,6 +55,10 @@ class StaticPagesController < ApplicationController
   end 
 
   def thankyou
+    @name = params[:name]
+    @email = params[:email]
+    @phone = params[:phone]
+    @message = params[:message]
   end 
 
  private 

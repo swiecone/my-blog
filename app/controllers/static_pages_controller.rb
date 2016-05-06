@@ -59,6 +59,7 @@ class StaticPagesController < ApplicationController
     @email = params[:email]
     @phone = params[:phone]
     @message = params[:message]
+    debugger
   end 
 
  private 

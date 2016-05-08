@@ -1,13 +1,13 @@
 <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/books-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/contacts-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Books</h1>
+                        <h1>Contacts through the form</h1>
                         <hr class="small">
-                        <span class="subheading">A list of books I've read</span>
+                        <span class="subheading">A list messages sent through the form!</span>
                     </div>
                 </div>
             </div>
@@ -22,12 +22,21 @@
 
 <div class="container">
      <% @contacts.each do |contact| %>
+         <div class="row">
+
              <p>
                <u><strong> MESSAGE <%= contact.id %> </strong></u><br><br>
 
-                <%= contact.name %> contacted on the <strong>  <%= contact.created_at.strftime("%m/%d/%Y")%> </strong> to say:<br> <i>&nbsp;&nbsp;<%= contact.message %> </i>.  <br><br>If you want to reply to him, click <%= link_to "#{contact.email}", "mailto:#{contact.email}" %>.
+                <%= contact.name %> contacted on the <strong>  <%= contact.created_at.strftime("%m/%d/%Y")%> </strong> to say:
+         <div class="col-md-offset-1">
+
+                <i><%= contact.message %> </i>.  
+        </div>
+        <br>f you want to reply to him, click <u><%= link_to "#{contact.email}", "mailto:#{contact.email}" %> </u>.
+
             </p> 
     <hr>
+        </div>
 
     <% end %>
 

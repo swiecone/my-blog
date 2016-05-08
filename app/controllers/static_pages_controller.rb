@@ -59,10 +59,25 @@ class StaticPagesController < ApplicationController
     @email = params[:email]
     @phone = params[:phone]
     @message = params[:message]
-    debugger
+    
+    @contact = Contact.new(name: @name, email: @email, phone: @phone, message: @message)
+        debugger
+
+      if @contact.save
+        flash[:success] = "Your message was sent successfully!"
+    else
+        flash[:danger] = "Your message was not sent."
+        render :new
+    end
+
   end 
 
  private 
+
+  # def contact_params
+  #   params.require(:contact).permit(:name, :email, :phone, :message)
+  # end 
+
 
 
 end

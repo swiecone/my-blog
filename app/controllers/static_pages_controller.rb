@@ -61,7 +61,6 @@ class StaticPagesController < ApplicationController
     @message = params[:message]
     
     @contact = Contact.new(name: @name, email: @email, phone: @phone, message: @message)
-        debugger
 
       if @contact.save
         flash[:success] = "Your message was sent successfully!"

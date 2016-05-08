@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :books
+  resources :contacts , only: [:index]
 
   #    Needed Static Pages: Home, Blog , Learnings  ,About, Contact
   root             'static_pages#home'

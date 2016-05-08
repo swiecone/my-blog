@@ -23,20 +23,12 @@
 <div class="container">
      <% @contacts.each do |contact| %>
              <p>
-               <strong> Date of Contact: <%= contact.created_at.strftime("%m/%d/%Y") %> </strong>
+               <u><strong> MESSAGE <%= contact.id %> </strong></u><br><br>
+
+                <%= contact.name %> contacted on the <strong>  <%= contact.created_at.strftime("%m/%d/%Y")%> </strong> to say:<br> <i>&nbsp;&nbsp;<%= contact.message %> </i>.  <br><br>If you want to reply to him, click <%= link_to "#{contact.email}", "mailto:#{contact.email}" %>.
             </p> 
-            <p>
-                Contact Name: <%= contact.name %>
-            </p> 
-             <p>
-                Contact email: <%= contact.email %>
-            </p> 
-               <p>
-                Contact email: <%= contact.email %>
-            </p> 
-            <p>
-                Contact Message: <%= contact.message %>
-            </p> 
+    <hr>
+
     <% end %>
 
  </div>

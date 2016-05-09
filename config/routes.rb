@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   get 'moocs' => 'static_pages#moocs'
   get 'findabook' => 'books#findabook'
   post 'findabook' => 'books#fabresult'
-  
-
 
   # posts 
   get 'mindfulrw' => 'post#mindfulrw'
@@ -31,7 +29,9 @@ Rails.application.routes.draw do
   get 'consciouspm' => 'post#consciouspm'
   get 'language' => 'post#language'
 
-
+  # login into the site
+  get '/login', to: 'logins#new'
+  post '/login', to: 'logins#create'
 
 
 

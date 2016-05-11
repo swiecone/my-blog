@@ -12,6 +12,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# gem to enable password authentication 
+gem 'bcrypt', '3.1.7'
 
 #use bootstrap library for styles 
 gem 'bootstrap-sass', '3.3.1'

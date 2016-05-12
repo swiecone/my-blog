@@ -5,16 +5,16 @@ class LoginsController < ApplicationController
 	end 
 
 	def create
-		# chef = Chef.find_by(email: params[:email])
-		# if chef && chef.authenticate(params[:password])
-		# 	session[:chef_id] = chef.id
-		# 	flash[:success] = "#{chef.chefname}, welcome to Recipes App!"
-		# 	redirect_to recipes_path
+		user = User.find_by(email: params[:email])
+		if user && user.authenticate(params[:password])
+			#session[user_id] = user.id
+			flash[:success] = "Welcome to Alex's Blog!"
+			redirect_to root_path
 
-		# else
-		# 	flash.now[:danger] = "Your email address or password does not match"
-		# 	render 'new'
-		#end
+		else
+			flash.now[:danger] = "Your email address or password does not match"
+			render 'new'
+		end
 	end 
 
 	def destroy

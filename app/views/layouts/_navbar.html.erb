@@ -48,6 +48,12 @@
                     <li>
                         <%= link_to "Contact", contact_path %>
                     </li>
+
+                    <% if logged_in? %>
+                      <li>
+                        <%= link_to "Add Book", new_book_path %>
+                    </li>
+                    <% end %> 
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

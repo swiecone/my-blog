@@ -82,7 +82,7 @@ hr.small {
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -355,7 +355,7 @@ form .row:first-child .floating-label-form-group {
   font-weight: 800;
   letter-spacing: 1px;
   padding: 15px 25px;
-  background-color: black;
+  background-color: white;
   border-radius: 0;
 }
 .pager li > a:hover,

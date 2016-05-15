@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 #    Needed Static Pages: Home, Blog , Learning  ,About, Contact
   #@english_language = true
+  before_action :require_user, only: [:new, :create]
   
   def index
         @books = Book.all

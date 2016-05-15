@@ -29,9 +29,10 @@ Rails.application.routes.draw do
   get 'consciouspm' => 'post#consciouspm'
   get 'language' => 'post#language'
 
-  # login into the site
+  # login and logout to the site
   get '/login', to: 'logins#new'
   post '/login', to: 'logins#create'
+  get 'logout', to: 'logins#destroy'
 
   # users
   resources :users, except: [:new]

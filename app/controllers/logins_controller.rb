@@ -7,7 +7,7 @@ class LoginsController < ApplicationController
 	def create
 		user = User.find_by(email: params[:email])
 		if user && user.authenticate(params[:password])
-			#session[user_id] = user.id
+			session[:user_id] = user.id
 			flash[:success] = "Welcome to Alex's Blog!"
 			redirect_to root_path
 
@@ -18,11 +18,10 @@ class LoginsController < ApplicationController
 	end 
 
 	def destroy
-		# if logged_in?
-		# 	@chef = current_user
-		# 	session[:chef_id] = nil
-		# 	flash[:success] = "#{@chef.chefname}, you have logged out correctly."
-		# 	redirect_to root_path
+
+			session[:chef_id] = nil
+		 	flash[:success] = "You have logged out correctly."
+			redirect_to root_path
 		# else 
 		# 	flash[:danger] = "You must log in before you log out :)"
 		# 	redirect_to root_path

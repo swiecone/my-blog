@@ -35,8 +35,8 @@ Rails.application.routes.draw do
   get 'logout', to: 'logins#destroy'
 
   # users
-  #resources :users, except: [:new]
-  #get 'register', to: 'chefs'
+  resources :users, except: [:new]
+  get 'register', to: 'chefs'
 end
 
 

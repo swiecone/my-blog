@@ -50,9 +50,19 @@
                     </li>
 
                     <% if logged_in? %>
-                      <li>
-                        <%= link_to "Add Book", new_book_path %>
-                    </li>
+                        <li class="dropdown">
+                            <%= link_to '#', class: "dropdown-toggle", "data-toggle" => "dropdown" do %>
+                              <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+
+                              <%= current_user.name %>   <b class="caret"></b>
+                        <% end %>
+                        <ul class='dropdown-menu black-link'>
+                            <li><%= link_to "Add Book", new_book_path , style:"color:black" %></li>
+                            <li><%= link_to "Add MOOC", "#", style:"color:black" %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Logout", logout_path , style:"color:black" %></li>
+
+                        </li>
                     <% end %> 
                 </ul>
             </div>

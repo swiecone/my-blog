@@ -4,6 +4,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
+
 body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 20px;
@@ -441,4 +443,8 @@ dl#tweetlist dt {
 
 .italico {
     font-style: italic;
+}
+
+.black-link {
+  color:black;
 }

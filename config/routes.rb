@@ -33,6 +33,10 @@ Rails.application.routes.draw do
   get '/login', to: 'logins#new'
   post '/login', to: 'logins#create'
 
+  # users
+  resources :users, except: [:new]
+  get 'register', to: 'chefs'
+end
 
 
 
@@ -91,4 +95,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

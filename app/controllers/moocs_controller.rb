@@ -4,6 +4,7 @@ class MoocsController < ApplicationController
 	end 
 
 	def new
+		@mooc = Mooc.new
 	end 
 
 end 

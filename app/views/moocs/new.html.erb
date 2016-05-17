@@ -1,1 +1,60 @@
 <%= render 'shared/page_header', bg_image: "../img/moocs-bg.jpg",title: "MOOCs", subtitle: "Online Courses I've done" %>
+
+   <!-- Main Content -->
+    <div class="container">
+    	<%= render 'shared/errors', obj: @book %>
+        <div class="row text-justify">
+            <div class="col-md-6 col-md-offset-3">
+             <%= form_for @book, url: books_path  do |f| %>
+			  <p>
+			    <%= f.label :title %><br>
+			    <%= f.text_field :title %>
+			  </p>
+
+			  <p>
+			    <%= f.label :platform %><br>
+			    <%= f.text_field :platform %>
+			  </p>
+			 
+			  <p>
+			    <%= f.label :university %><br>
+			    <%= f.text_area :university %>
+			  </p>
+
+			    <p>
+			    <%= f.label :shortsummary %><br>
+			    <%= f.text_area :shortsummary %>
+			  </p>
+
+			  
+
+			    <%= f.label :status %><br>
+			   <select name="status">
+  					<option value="In Progress">In Progress</option>
+				    <option value="Completed">Read</option>
+			   </select>
+			  </p>
+
+			 <p>
+
+			<br><br>
+				If you finished the mooc, enter the date you finished it:<br>
+				<input type="date" name="read"><br><br>
+			 </p>
+
+			  <p>
+			    <%= f.label :urltomoon %><br>
+			    <%= f.text_field :urltomoon %>
+			  </p>
+
+
+			  <p>
+			    <%= f.submit %>
+			  </p>
+			<% end %>
+            </div>
+                
+       </div>
+    </div>
+
+    <hr>

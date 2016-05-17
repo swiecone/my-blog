@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  platform: MyString
+  university: MyString
+  shortsummary: MyString
+  longsummary: MyText
+  finished: MyString
+  status: MyString
+  urltomoon: MyString
+
+two:
+  title: MyString
+  platform: MyString
+  university: MyString
+  shortsummary: MyString
+  longsummary: MyText
+  finished: MyString
+  status: MyString
+  urltomoon: MyString

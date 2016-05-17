@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
+   # users
+  resources :users, except: [:new]
+  get 'register', to: 'chefs'
+
+  # book routes 
   resources :books
+
+  # mooc routes
+  resources :moocs
+
+  # this is to see the people that have contacted through the form
   resources :contacts , only: [:index]
 
   #    Needed Static Pages: Home, Blog , Learnings  ,About, Contact
@@ -16,7 +26,7 @@ Rails.application.routes.draw do
   get 'english' => 'static_pages#english'
   get 'spanish' => 'static_pages#spanish'
   get 'advise' => 'static_pages#advise'
-  get 'moocs' => 'static_pages#moocs'
+  # get 'moocs' => 'static_pages#moocs'
   get 'findabook' => 'books#findabook'
   post 'findabook' => 'books#fabresult'
 
@@ -34,9 +44,7 @@ Rails.application.routes.draw do
   post '/login', to: 'logins#create'
   get 'logout', to: 'logins#destroy'
 
-  # users
-  resources :users, except: [:new]
-  get 'register', to: 'chefs'
+ 
 end
 
 

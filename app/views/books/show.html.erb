@@ -1,37 +1,7 @@
 <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/findabook-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1><%= @book.title %></h1>
-                        <hr class="small">
-                        <span class="subheading">
-                                
-                <p>ISBN: <%= @book.isbn %> READ: 
-                    <% if @book.status == "In Progress" %>
-                            <span style="font-style: italic">Currently Reading </span>
-                    <% else %>
-                            <%= @book.read %> 
-                    <% end %> 
-                        RATING:
+<%= render 'shared/book_header', bg_image: "i../img/findabook-bg.jpg",title: @book.title, isbn: @book.isbn, read: @book.read, status: @book.status, rating: @book.rating %>
 
-                            RATING:
-                                     <% if @book.status == "In Progress" %>
-                                        <span style="font-style: italic">tbd. </span>
-                                    <% else %>
-                                        <%= @book.rating %>/10
-                                    <% end %> 
-
-                      
-
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header> 
 
     <div class="container">
         <div class="row">

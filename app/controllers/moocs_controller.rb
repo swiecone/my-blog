@@ -8,4 +8,8 @@ class MoocsController < ApplicationController
 		@mooc = Mooc.new
 	end 
 
+	def show 
+		@mooc = Mooc.find(1)
+	end
+
 end 

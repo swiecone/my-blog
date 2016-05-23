@@ -18,16 +18,11 @@ gem 'bcrypt', '3.1.7'
 #use bootstrap library for styles 
 gem 'bootstrap-sass', '3.3.1'
 
-# Use font awesome library for icons
-gem 'font-awesome-sass', '4.2.0'
-
 # Gem Font Awesome to have awesome icons
 gem 'font-awesome-sass', '4.2.0'
 
 # Adding google books api
 gem 'google_book'
-
-
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,6 +33,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0', group: :development
+
+  
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -50,18 +49,25 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring' 
-
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
+  #Rspec gems to test the code
+  gem 'rspec-rails', '~> 3.4'
+  gem 'factory_girl_rails'
 end
+
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+group :test do 
+  gem 'faker', '~> 1.6'
+  gem 'capybara', '~> 2.7'
+  gem 'database_cleaner', '~> 1.3.0'
+  gem 'launchy', '~> 2.4'
+  gem 'selenium-webdriver', '~> 2.43.0'
+end 

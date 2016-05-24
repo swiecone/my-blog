@@ -4,7 +4,7 @@
     <div class="container">
     	<%= render 'shared/errors', obj: @mooc %>
         <div class="row text-justify">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3 well">
              <%= form_for @mooc, url: books_path  do |f| %>
 			  <p>
 			    <%= f.label :title %><br>
@@ -22,7 +22,7 @@
 			  </p>
 
 			    <p>
-			    <%= f.label :shortsummary %><br>
+			    <%= f.label 'short summary' %><br>
 			    <%= f.text_area :shortsummary %>
 			  </p>
 

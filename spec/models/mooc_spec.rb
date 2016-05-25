@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Book do 
+describe Mooc do 
    it "is valid with title, platform, short summary, status and urltomooc" do 
       mooc = Mooc.new(title: "Design of Social Surveys", 
                      platform: "Coursera.org",

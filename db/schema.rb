@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522223616) do
+ActiveRecord::Schema.define(version: 20160525215338) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 20160522223616) do
     t.datetime "updated_at",   null: false
     t.integer  "rating"
     t.string   "urltomooc"
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

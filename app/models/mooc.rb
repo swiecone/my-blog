@@ -3,7 +3,7 @@ class Mooc < ActiveRecord::Base
 	# validates :platform, presence: true ,  length: { minimum: 3, maximum: 100 }
 	# validates :university, presence: true ,  length: { minimum: 3, maximum: 100 }
 		# should be another table!! 
-
+   has_one :platform
 	validates :shortsummary, presence: true ,  length: { minimum: 30, maximum: 400 }
 	# validates :status, presence: true, length: { minimum: 6, maximum: 15 }
 		# should be another table!! 

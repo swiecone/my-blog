@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525215338) do
+ActiveRecord::Schema.define(version: 20160526221353) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20160525215338) do
 
   create_table "moocs", force: :cascade do |t|
     t.string   "title"
-    t.string   "platform"
     t.string   "university"
     t.string   "shortsummary"
     t.text     "longsummary"
@@ -53,7 +52,10 @@ ActiveRecord::Schema.define(version: 20160525215338) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "mooc_id"
   end
+
+  add_index "platforms", ["mooc_id"], name: "index_platforms_on_mooc_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -1,5 +1,6 @@
 class Mooc < ActiveRecord::Base
-	has_one :platform
+   has_many :categories
+	belongs_to :platform
    validates :title, presence: true ,  length: { minimum: 10, maximum: 200 }
 	validates :shortsummary, presence: true ,  length: { minimum: 30, maximum: 400 }
 	validates :urltomooc, presence: true, length: { minimum: 20 } 

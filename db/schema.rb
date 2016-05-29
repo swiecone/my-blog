@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526221353) do
+ActiveRecord::Schema.define(version: 20160529161008) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20160526221353) do
     t.date     "read"
     t.string   "status"
     t.string   "thumburl"
+    t.integer  "platform_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -45,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160526221353) do
     t.datetime "updated_at",   null: false
     t.integer  "rating"
     t.string   "urltomooc"
+    t.integer  "platform_id"
   end
 
   create_table "platforms", force: :cascade do |t|
@@ -52,10 +58,7 @@ ActiveRecord::Schema.define(version: 20160526221353) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "mooc_id"
   end
-
-  add_index "platforms", ["mooc_id"], name: "index_platforms_on_mooc_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+	has_many :categories
 	validates :isbn, presence: true ,  length: { in: 10..13 }
 	validates :title, presence: true , length: { minimum: 5, maximum: 100 }
 	validates :shortsummary, presence: true, length: { minimum: 30, maximum: 400 }

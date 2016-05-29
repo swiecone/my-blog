@@ -3,8 +3,6 @@ require 'rails_helper'
 describe Mooc do 
    it "is valid with title, platform, short summary, status and urltomooc" do 
       mooc = Mooc.new(title: "Design of Social Surveys", 
-                     platform: "Coursera.org",
-                     university: "Michigan University",
                      shortsummary: "The fucking course is awesome!!",
                      status: "In progress",
                      rating: "10",

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529161008) do
+ActiveRecord::Schema.define(version: 20160529161528) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn"
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20160529161008) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "rating"
-    t.string   "urltomooc"
     t.integer  "platform_id"
+    t.string   "url"
   end
 
   create_table "platforms", force: :cascade do |t|

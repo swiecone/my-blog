@@ -22,7 +22,6 @@ class BooksController < ApplicationController
     @book.read = @read.to_s   
 
     @thumburl = params[:thumburl]
-    debugger
 
 
     if @book.save

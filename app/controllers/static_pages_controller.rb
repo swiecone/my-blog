@@ -54,6 +54,10 @@ class StaticPagesController < ApplicationController
   def findabook
   end 
 
+
+  def takesanetwork
+  end 
+  
   def thankyou
     @name = params[:name]
     @email = params[:email]

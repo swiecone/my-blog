@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   get 'loop' => 'post#loop'
   get 'consciouspm' => 'post#consciouspm'
   get 'language' => 'post#language'
+  get 'takesanetwork' => 'post#takesanetwork'
+
 
   # login and logout to the site
   get '/login', to: 'logins#new'

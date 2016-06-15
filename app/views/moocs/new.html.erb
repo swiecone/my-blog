@@ -7,13 +7,17 @@
             <div class="col-md-6 col-md-offset-3 well">
              <%= form_for @mooc, url: books_path  do |f| %>
 			  <p>
-			    <%= f.label :title %><br>
+			    <%= f.label 'MOOC title' %><br>
 			    <%= f.text_field :title %>
 			  </p>
 
 			  <p>
-			    <%= f.label :platform %><br>
-			    <%= f.text_field :platform %>
+			    <%= f.label 'MOOC Platform' %><br>
+			     <select name="platform">
+  					<option value="1">Platform 1</option>
+				    <option value="2">Platform 2</option>
+				    <option value="3">Platform 3</option>
+				</select>
 			  </p>
 			 
 			  <p>

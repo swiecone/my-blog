@@ -7,6 +7,8 @@ class MoocsController < ApplicationController
 
 	def new
 		@mooc = Mooc.new
+		@platforms = Platform.all
+		@institutions = Institution.all
 	end 
 
 	def show 

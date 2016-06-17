@@ -12,6 +12,8 @@ class StaticPagesController < ApplicationController
 
   def learning
         @books = Book.where(status: "In Progress")
+        @moocs = Mooc.where(status: "Studying")
+        @institutions = Institution.all
   end
 
   def about 

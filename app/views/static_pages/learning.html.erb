@@ -33,6 +33,10 @@
         
             <div class="row">
             <!-- Main Content -->
+
+
+            <!-- Only show books you are currently reading -->
+
             <% @books.each do |book| %>
                         <figure style="margin-bottom: 100px">
                             <span style="float:left;padding-right: 15px;"> <%= image_tag book.thumburl %></span>
@@ -79,25 +83,47 @@
     <br>
         <h2> <%= link_to "MOOCs", moocs_path %></h2>
 
-           <figure class="amooc" style="margin-bottom: 50px">
-              
+            <!-- Only show moocs you are currently studying -->
+
+          <% @moocs.each do |mooc| %>
+                        <figure>
+                            <a href="#" style="float:left;padding-right: 15px;">
+
+                                <%= image_tag mooc.thumburl%></a>
                             <figcaption>
-                                <h3><a href="#">   <a href="https://www.coursera.org/learn/questionnaire-design">Questionnaire Design </a> </a>
+                                <h3>
+                                <%= link_to "#{mooc.title}", mooc_path(mooc) %>
+                           
+                            </a>
 
-                <span class="label label-warning" style="margin-left: 15px;">In Progress</span></h3> 
-                              
-                        
+                             <% if mooc.status == "Studying" %>
+                        <span class="label label-warning" style="margin-left: 15px;">
+                            <%= mooc.status %></span></h3> 
+                 <% else %>
+                        <span class="label label-success" style="margin-left: 15px;">
+                            <%= mooc.status %></span></h3> 
+                 <% end %>
+                                
+                <p>INSTITUTION: <%= @institutions.find_by(mooc.id).name %> STATUS: 
+                    <% if mooc.status == "In Progress" %>
+                            <span style="font-style: italic"> Studying</span>
+                    <% else %>
+                            Completed
+                    <% end %> 
 
-                                <p>PLATFORM: Coursera UNI: Michigan STUDIED: 
-                                        <span style="font-style: italic">Currently Studying </span>
-                                   
-                                    RATING: 7/10</p>
-                                <p>    This course will cover the basic elements of designing and evaluating questionnaires. We will review the process of responding to questions, challenges and options for asking questions about behavioral frequencies, practical techniques for evaluating questions, mode specific questionnaire characteristics, and review methods of standardized and conversational interviewing.
-</p>
+                            RATING:
+                                     <% if mooc.status == "In Progress" %>
+                                        <span style="font-style: italic">tbd. </span>
+                                    <% else %>
+                                        <%= mooc.rating %>/10
+                                    <% end %> 
+
+                        <p><%= mooc.shortsummary %></p>
+
+
                             </figcaption>
                         </figure>
-
-     
+            <% end %>
  
         
         

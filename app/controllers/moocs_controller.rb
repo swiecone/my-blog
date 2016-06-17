@@ -3,6 +3,7 @@ class MoocsController < ApplicationController
 
 	def index
 		@moocs = Mooc.all
+		@platforms = Platform.all
 	end 
 
 	def new

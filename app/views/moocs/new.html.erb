@@ -13,7 +13,7 @@
 
 			  <p>
 			    <%= f.label 'Platform' %><br>
-			     <select name="platform">
+			     <select name="platform" >
   					<% @platforms.each do |platform| %>
 	  					<option value="<%= platform.id %>"><%= platform.name %></option>
 				    <% end %>
@@ -22,7 +22,7 @@
 			 
 			  <p>
    			    <%= f.label 'Institution' %><br>
-			     <select name="institution">
+			     <select name="institution"  >
   					<% @institutions.each do |institution| %>
 	  					<option value="<%= institution.id %>"><%= institution.name %></option>
 				    <% end %>

@@ -4,6 +4,8 @@ class MoocsController < ApplicationController
 	def index
 		@moocs = Mooc.all
 		@platforms = Platform.all
+		@institutions = Institution.all
+
 	end 
 
 	def new

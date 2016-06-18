@@ -104,7 +104,7 @@
                             <%= mooc.status %></span></h3> 
                  <% end %>
                                 
-                <p>INSTITUTION: <%= @institutions.find_by(mooc.id).name %> STATUS: 
+                <p>INSTITUTION: <%= @institutions.find(mooc.institution_id).name %> STATUS: 
                     <% if mooc.status == "In Progress" %>
                             <span style="font-style: italic"> Studying</span>
                     <% else %>

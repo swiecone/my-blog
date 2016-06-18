@@ -105,14 +105,14 @@
                  <% end %>
                                 
                 <p>INSTITUTION: <%= @institutions.find(mooc.institution_id).name %> STATUS: 
-                    <% if mooc.status == "In Progress" %>
+                    <% if mooc.status == "Studying" %>
                             <span style="font-style: italic"> Studying</span>
                     <% else %>
                             Completed
                     <% end %> 
 
                             RATING:
-                                     <% if mooc.status == "In Progress" %>
+                                     <% if mooc.status == "Studying" %>
                                         <span style="font-style: italic">tbd. </span>
                                     <% else %>
                                         <%= mooc.rating %>/10

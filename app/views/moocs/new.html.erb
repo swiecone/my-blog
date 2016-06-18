@@ -5,7 +5,7 @@
     	<%= render 'shared/errors', obj: @mooc %>
         <div class="row text-justify">
             <div class="col-md-6 col-md-offset-3 well">
-             <%= form_for @mooc, url: books_path  do |f| %>
+             <%= form_for @mooc, url: moocs_path  do |f| %>
 			  <p>
 			    <%= f.label 'MOOC title' %><br>
 			    <%= f.text_field :title %>
@@ -13,7 +13,7 @@
 
 			  <p>
 			    <%= f.label 'Platform' %><br>
-			     <select name="platform" >
+			     <select name="platform_id" >
   					<% @platforms.each do |platform| %>
 	  					<option value="<%= platform.id %>"><%= platform.name %></option>
 				    <% end %>
@@ -22,7 +22,7 @@
 			 
 			  <p>
    			    <%= f.label 'Institution' %><br>
-			     <select name="institution"  >
+			     <select name="institution_id"  >
   					<% @institutions.each do |institution| %>
 	  					<option value="<%= institution.id %>"><%= institution.name %></option>
 				    <% end %>
@@ -38,8 +38,8 @@
 
 			    <%= f.label :status %><br>
 			   <select name="status">
-  					<option value="In Progress">In Progress</option>
-				    <option value="Completed">Read</option>
+  					<option value="Studying">Studying</option>
+				    <option value="Completed">Completed</option>
 			   </select>
 			  </p>
 
@@ -66,10 +66,14 @@
 				</select>
 			  </p>
 
-
 			  <p>
 			    <%= f.label :url %><br>
 			    <%= f.text_field :url %>
+			  </p>
+
+			 <p>
+			    <%= f.label 'Thumb Url' %><br>
+			    <%= f.text_field :thumburl %>
 			  </p>
 
 

@@ -29,18 +29,23 @@
                             <%= book.status %></span></h3> 
                  <% end %>
                                 
-                <p>ISBN: <%= book.isbn %> READ: 
+                <p>
+                    ISBN: 
+                    <span style="font-style: italic">
+                        <%= book.isbn %> 
+                    </span> 
+
+                    READ: 
                     <% if book.status == "In Progress" %>
                             <span style="font-style: italic">Currently Reading </span>
                     <% else %>
-                            <%= book.read %> 
+                            <span style="font-style: italic"> <%= book.read %> </span>
                     <% end %> 
-                        RATING:
-
                             RATING:
                                      <% if book.status == "In Progress" %>
                                         <span style="font-style: italic">tbd. </span>
                                     <% else %>
+                                        <span style="font-style: italic"> </span>
                                         <%= book.rating %>/10
                                     <% end %> 
 

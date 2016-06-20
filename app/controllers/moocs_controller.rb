@@ -20,7 +20,6 @@ class MoocsController < ApplicationController
     @mooc.platform_id = params[:platform_id]
     @mooc.rating = params[:rating]
     @mooc.url = params[:url]
-
     @mooc.thumburl = params[:thumburl]
     debugger
 

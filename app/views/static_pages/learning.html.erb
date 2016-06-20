@@ -54,17 +54,22 @@
                                     <% end %>
                         
 
-                                <p>ISBN: <%= book.isbn %> READ: 
+                                <p>ISBN: 
+                                      <span style="font-style: italic">
+                                        <%= book.isbn %> 
+                                      </span>
+
+                                    READ: 
                                     <% if book.status == "In Progress" %>
                                         <span style="font-style: italic">Currently Reading </span>
                                     <% else %>
-                                        <%= book.read %> 
+                                      <span style="font-style: italic">   <%= book.read %> </span>
                                     <% end %> 
                                     RATING:
                                      <% if book.status == "In Progress" %>
                                         <span style="font-style: italic">tbd. </span>
                                     <% else %>
-                                        <%= book.rating %>/10
+                                       <span style="font-style: italic"> <%= book.rating %>/10  </span>
                                     <% end %> 
                                 <p><%= book.shortsummary %> </p>
                             </figcaption>
@@ -104,20 +109,34 @@
                             <%= mooc.status %></span></h3> 
                  <% end %>
                                 
-                <p>INSTITUTION: <%= @institutions.find(mooc.institution_id).name %> STATUS: 
+                <p>INSTITUTION:
+                 <span style="font-style: italic"> 
+                     <%= @institutions.find(mooc.institution_id).name %> 
+                </span>
+                
+                     STATUS: 
                     <% if mooc.status == "Studying" %>
                             <span style="font-style: italic"> Studying</span>
                     <% else %>
-                            Completed
+                          <span style="font-style: italic">    Completed </span>
                     <% end %> 
 
                             RATING:
                                      <% if mooc.status == "Studying" %>
                                         <span style="font-style: italic">tbd. </span>
                                     <% else %>
-                                        <%= mooc.rating %>/10
+                                         <span style="font-style: italic"> <%= mooc.rating %>/10</span>
                                     <% end %> 
+                            <br>
+                            CERTIFICATION: 
+                                  <% if mooc.certification == "No" %>
+                                        <span style="font-style: italic">No </span>
+                                  <% else %>
+                                <span style="font-style: italic">
+                                  <%= link_to "#{mooc.title} + certification link", @mooc.certification %>
+                                  </span>
 
+                                  <% end %>  
                         <p><%= mooc.shortsummary %></p>
 
 

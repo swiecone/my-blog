@@ -1,5 +1,6 @@
 class Mooc < ActiveRecord::Base
    has_many :categories
+   has_one :certificate
    belongs_to :platform
    belongs_to :institution
    validates :title, presence: true ,  length: { minimum: 10, maximum: 200 }

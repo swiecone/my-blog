@@ -47,10 +47,10 @@
 
                             <br>
                                   <% if mooc.has_certification == true %>
-                                CERTIFICATION:
+                                OFFICIAL CERTIFICATE:
 
                                 <span style="font-style: italic">
-                                  <%= link_to "certification link", "#" %>
+                                  <%= link_to "#{@certificates.licenceid}", @certificates.url , target: '_blank' %>
                                   </span>
                                   <% else %>
                                   NOTE:

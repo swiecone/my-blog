@@ -38,7 +38,7 @@ class MoocsController < ApplicationController
 
 private
   def moocs_params
-    params.require(:mooc).permit( :title, :platform, :institution, :shortsummary, :status, :rating, :url, :thumburl)
+    params.require(:mooc).permit( :title, :platform, :institution, :shortsummary, :status, :rating, :url, :thumburl, :certification)
   end
 
 end 

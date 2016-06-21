@@ -128,15 +128,7 @@
                                          <span style="font-style: italic"> <%= mooc.rating %>/10</span>
                                     <% end %> 
                             <br>
-                            CERTIFICATION: 
-                                  <% if mooc.certification == "No" %>
-                                        <span style="font-style: italic">No </span>
-                                  <% else %>
-                                <span style="font-style: italic">
-                                  <%= link_to "#{mooc.title} + certification link", @mooc.certification %>
-                                  </span>
-
-                                  <% end %>  
+                           
                         <p><%= mooc.shortsummary %></p>
 
 

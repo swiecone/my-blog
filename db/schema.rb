@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620005511) do
+ActiveRecord::Schema.define(version: 20160621012650) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn"
@@ -29,6 +29,12 @@ ActiveRecord::Schema.define(version: 20160620005511) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "certificates", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.string "licenceid"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -51,14 +57,15 @@ ActiveRecord::Schema.define(version: 20160620005511) do
     t.string   "shortsummary"
     t.text     "longsummary"
     t.string   "status"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "rating"
     t.integer  "platform_id"
     t.string   "url"
     t.integer  "institution_id"
     t.string   "thumburl"
-    t.string   "certification"
+    t.boolean  "has_certification"
+    t.integer  "certificate_id"
   end
 
   create_table "platforms", force: :cascade do |t|

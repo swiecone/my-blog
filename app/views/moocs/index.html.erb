@@ -46,12 +46,15 @@
                                     <% end %> 
 
                             <br>
-                                  <% if mooc.certification == "No" %>
-                                        <span style="font-style: italic">No </span>
-                                  <% else %>
+                                  <% if mooc.has_certification == true %>
+                                CERTIFICATION:
+
                                 <span style="font-style: italic">
-                                  <%= link_to "certification link", mooc.certification %>
+                                  <%= link_to "certification link", "#" %>
                                   </span>
+                                  <% else %>
+                                  NOTE:
+                                  <span style="font-style: italic">  No official certification obtained </span>
 
                                   <% end %>  
 

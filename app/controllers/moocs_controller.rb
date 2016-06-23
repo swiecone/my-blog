@@ -34,7 +34,10 @@ class MoocsController < ApplicationController
 
 
 	def show 
-		@mooc = Mooc.find(1)
+		@mooc = Mooc.find(params[:id])
+    @institutions = Institution.all
+    debugger
+
 	end
 
 private

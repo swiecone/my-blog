@@ -1,4 +1,4 @@
-<%= render 'shared/page_header', bg_image: "../img/moocs-bg.jpg",title: @mooc.title, subtitle: @mooc.shortsummary %>
+<%= render 'shared/mooc_header', bg_image: "../img/moocs-bg.jpg",title: @mooc.title, institution:  @institutions.find(@mooc.institution_id).name , status: @mooc.status, rating: @mooc.rating  %>
 
  <div class="container">
         <div class="row">

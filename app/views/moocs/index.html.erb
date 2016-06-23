@@ -27,7 +27,7 @@
                                 
                 <p>INSTITUTION: 
                     <span style="font-style: italic"> 
-                        <%= @institutions.find_by(mooc.id).name %> 
+                        <%= @institutions.find(mooc.institution_id).name %> 
                     </span>
 
                     STATUS: 

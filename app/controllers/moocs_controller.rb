@@ -34,10 +34,9 @@ class MoocsController < ApplicationController
 
 
 	def show 
+    #we pick up the moooc that has been selected, and pass the institution associated to the mooc
 		@mooc = Mooc.find(params[:id])
-    @institutions = Institution.all
-    debugger
-
+    @institution = Institution.find(@mooc.institution_id).name
 	end
 
 private

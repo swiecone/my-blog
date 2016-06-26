@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 describe Book do 
-	it "is valid with isbn, title, shortsummary and thumburl" do 
+	it "is valid with isbn, title, shortsummary, status, thumburl and platform_id" do 
 		book = Book.new(isbn: "0123456789", 
 						title: "Book Title",
 						shortsummary: "Short Summary of the book and it should be longer",
-						thumburl: "http://Thumburl.html")
+						status: "Reading",
+						thumburl: "http://Thumburl.html",
+						platform_id: 1)
 		expect(book).to be_valid
 	end 
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Category do 
 	it "is valid if category name is longer than 5" do 
-		cat = Category.new(name: "Category")
+		cat = Category.new(name: "Mindfulness")
 	    expect(cat).to be_valid
 	end 
 
@@ -11,8 +11,8 @@ describe Category do
 	    expect(cat).not_to be_valid
 	end 
 
-	it "is valid if category name is short than 5" do 
-		cat = Category.new(name: "AAA")
-	    expect(cat).to be_valid
+	it "is valid if category name is short than 3" do 
+		cat = Category.new(name: "AA")
+	    expect(cat).not_to be_valid
 	end 
 end 

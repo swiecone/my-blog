@@ -1,98 +1,59 @@
 require 'rails_helper'
 
+# create_table "moocs", force: :cascade do |t|
+#     t.string   "title"
+#     t.string   "shortsummary"
+#     t.text     "longsummary"
+#     t.string   "status"
+#     t.datetime "created_at",        null: false
+#     t.datetime "updated_at",        null: false
+#     t.integer  "rating"
+#     t.integer  "platform_id"
+#     t.string   "url"
+#     t.integer  "institution_id"
+#     t.string   "thumburl"
+#     t.boolean  "has_certification"
+#     t.integer  "certificate_id"
+#   end
+
+ # has_many :categories
+ #   has_one :certificate
+ #   belongs_to :platform
+ #   belongs_to :institution
+ #   validates :title, presence: true ,  length: { minimum: 10, maximum: 200 }
+ #   validates :shortsummary, presence: true ,  length: { minimum: 30, maximum: 400 }
+ #   validates :platform_id, presence: true 
+ #   validates :institution_id, presence: true  
+
 describe Mooc do 
-   it "is valid with title, platform, short summary, status and urltomooc" do 
+   it "is valid with title, platform, short summary, status, platform_id, url, institution_id, urltomooc and has_certification" do 
       mooc = Mooc.new(title: "Design of Social Surveys", 
                      shortsummary: "The fucking course is awesome!!",
                      status: "In progress",
-                     rating: "10",
-                     urltomooc: "https://www.coursera.org/learn/questionnaire-design")
+                     platform_id: 1, 
+                     url: "http://www.moocs.com",
+                     institution_id: 1,
+                     thumburl: "http://www.mepareceunaaberracion.com", 
+                     has_certification: true)
             expect(mooc).to be_valid
    end 
 
-   it "is valid with title longer than 10 characters and less than 200" do 
-         @title = "A" * 111
-         mooc = Mooc.new(title: @title, 
-                     platform: "Coursera.org",
-                     university: "Michigan University",
-                     shortsummary: "The fucking course is awesome!!",
-                     status: "In progress",
-                     rating: "10",
-                     urltomooc: "https://www.coursera.org/learn/questionnaire-design")
-         expect(mooc).to be_valid
-   end 
+  it "is invalid without a title"
+  it "is invalid with a title shorter than 5"
+  it "is invalid with a title longer than 100"
+  it "is invalid without a short summary"
+  it "is invalid with a short summary less than 30"
+  it "is invalid with a short summary more than 400"
 
-   it "is not valid with title less than 10 characters" do 
-         @title = "A" * 9
-         mooc = Mooc.new(title: @title, 
-                     platform: "Coursera.org",
-                     university: "Michigan University",
-                     shortsummary: "The fucking course is awesome!!",
-                     status: "In progress",
-                     rating: "10",
-                     urltomooc: "https://www.coursera.org/learn/questionnaire-design")
-         expect(mooc).not_to be_valid
-   end 
 
-  it "is not valid with title more than 200 characters" do 
-         @title = "A" * 201
-         mooc = Mooc.new(title: @title, 
-                     platform: "Coursera.org",
-                     university: "Michigan University",
-                     shortsummary: "The fucking course is awesome!!",
-                     status: "In progress",
-                     rating: "10",
-                     urltomooc: "https://www.coursera.org/learn/questionnaire-design")
-         expect(mooc).not_to be_valid
-   end 
+  it "is invalid without a url"
+  it "is invalid with a url shorter than 11"
 
-   it "is not valid with a shortsummary that is less than 30 characters" do 
-        @shortsummary = "A" * 29
-         mooc = Mooc.new(title: "Coursera.org",
-                     platform: "Michigan University",
-                     university: "Michigan University",
-                     shortsummary: @shortsummary, 
-                     status: "In progress",
-                     rating: "10",
-                     urltomooc: "https://www.coursera.org/learn/questionnaire-design")
-         expect(mooc).not_to be_valid
-   end 
+  it "is invalid without a thumburl"
+  it "is invalid with a thumburl shorter than 11"
 
-     it "is not valid with a shortsummary that is more than 400 characters" do 
-        @shortsummary = "A" * 401
-         mooc = Mooc.new(title: "Coursera.org",
-                     platform: "Michigan University",
-                     university: "Michigan University",
-                     shortsummary: @shortsummary, 
-                     status: "In progress",
-                     rating: "10",
-                     urltomooc: "https://www.coursera.org/learn/questionnaire-design")
-         expect(mooc).not_to be_valid
-   end 
-
-   it "is not valid with  urltomooc shorter than 20 characters" do 
-       @urltomooc = "A" * 19
-         mooc = Mooc.new(title: "Coursera.org",
-                     platform: "Michigan University",
-                     university: "Michigan University",
-                     shortsummary:  "The fucking course is awesome!!",
-                     status: "In progress",
-                     rating: "10",
-                     urltomooc: @urltomooc )
-         expect(mooc).not_to be_valid
-   end 
-
+  it "is invalid without a platform_id"
+  it "is imvalid without institution_id"
+  it "is valued"
 
 end
-
-#This is the schema for MOOCs 
-   # t.string   "title"
-   #  t.string   "platform"
-   #  t.string   "university"
-   #  t.string   "shortsummary"
-   #  t.text     "longsummary"
-   #  t.string   "status"
-   #  t.datetime "created_at",   null: false
-   #  t.datetime "updated_at",   null: false
-   #  t.integer  "rating"
-   #  t.string   "urltomooc"

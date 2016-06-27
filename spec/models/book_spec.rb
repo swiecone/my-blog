@@ -1,13 +1,33 @@
 require 'rails_helper'
 
+
+# create_table "books", force: :cascade do |t|
+#     t.string   "isbn"
+#     t.string   "title"
+#     t.string   "shortsummary"
+#     t.text     "longsummary"
+#     t.integer  "rating"
+#     t.date     "read"
+#     t.string   "status"
+#     t.string   "thumburl"
+#   end
+
+# has_many :categories
+# 	validates :isbn, presence: true
+# 	validates :title, presence: true , length: { minimum: 5, maximum: 100 }
+# 	validates :shortsummary, presence: true, length: { minimum: 30, maximum: 400 }
+# 	validates :status, presence: true
+# 	validates :thumburl, presence: true ,  length: { minimum: 10 }
+
+
+
 describe Book do 
-	it "is valid with isbn, title, shortsummary, status, thumburl and platform_id" do 
+	it "is valid with isbn, title, shortsummary, status and thumburl" do 
 		book = Book.new(isbn: "0123456789", 
 						title: "Book Title",
 						shortsummary: "Short Summary of the book and it should be longer",
 						status: "Reading",
-						thumburl: "http://Thumburl.html",
-						platform_id: 1)
+						thumburl: "http://Thumburl.html")
 		expect(book).to be_valid
 	end 
 
@@ -15,6 +35,7 @@ describe Book do
 			book = Book.new(isbn: nil, 
 						title: "Book Title",
 						shortsummary: "Short Summary of the book and it should be longer",
+						status: "Reading",
 						thumburl: "http://Thumburl.html")
 			expect(book).not_to be_valid
 	end 
@@ -23,6 +44,7 @@ describe Book do
 			book = Book.new(isbn: "0123", 
 						title: "Book Title",
 						shortsummary: "Short Summary of the book and it should be longer",
+						status: "Reading",
 						thumburl: "http://Thumburl.html")
 			expect(book).not_to be_valid
 	end 
@@ -32,6 +54,7 @@ describe Book do
 			book = Book.new(isbn: @isbn, 
 						title: "Book Title",
 						shortsummary: "Short Summary of the book and it should be longer",
+						status: "Reading",
 						thumburl: "http://Thumburl.html")
 			expect(book).not_to be_valid
 	end 
@@ -40,6 +63,7 @@ describe Book do
 		book = Book.new(isbn:  "0123456789", 
 						title: nil, 
 						shortsummary: "Short Summary of the book and it should be longer",
+						status: "Reading",
 						thumburl: "http://Thumburl.html")
 			expect(book).not_to be_valid
 	end 
@@ -48,6 +72,7 @@ describe Book do
 		book = Book.new(isbn: "0123456789", 
 						title: "Book Title",
 						shortsummary: nil,
+						status: "Reading",
 						thumburl: "http://Thumburl.html")
 		expect(book).not_to be_valid
 	end 
@@ -56,6 +81,7 @@ describe Book do
 		book = Book.new(isbn: "0123456789", 
 						title: "Book Title",
 						shortsummary: "A",
+						status: "Reading",
 						thumburl: "http://Thumburl.html")
 		expect(book).not_to be_valid
 	end 
@@ -65,6 +91,7 @@ describe Book do
 		book = Book.new(isbn: "0123456789", 
 						title: "Book Title",
 						shortsummary: @shortsummary,
+						status: "Reading",
 						thumburl: "http://Thumburl.html")
 		expect(book).not_to be_valid
 	end 
@@ -73,6 +100,7 @@ describe Book do
 		book = Book.new(isbn: "0123456789", 
 						title: "Book Title",
 						shortsummary: "Short Summary of the book and it should be longer",
+						status: "Reading",
 						thumburl: nil)
 		expect(book).not_to be_valid
 	end 

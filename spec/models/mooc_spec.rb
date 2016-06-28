@@ -38,7 +38,18 @@ describe Mooc do
             expect(mooc).to be_valid
    end 
 
-  it "is invalid without a title"
+  it "is invalid without a title" do 
+      mooc = Mooc.create(title: nil, 
+                     shortsummary: "The fucking course is awesome!!",
+                     status: "In progress",
+                     platform_id: 1, 
+                     url: "http://www.moocs.com",
+                     institution_id: 1,
+                     thumburl: "http://www.mepareceunaaberracion.com", 
+                     has_certification: true)
+           expect(mooc.errors[:title]).to include("can't be blank", "is too short (minimum is 5 characters)") 
+    end 
+
   it "is invalid with a title shorter than 5"
   it "is invalid with a title longer than 100"
   it "is invalid without a short summary"

@@ -2,7 +2,11 @@ require 'rails_helper'
 
 
 describe User do 
-	it "is a valid user" 
+	it "is a valid user" do 
+		 user = User.create(name: "Alex2", email: "alex2@alexswiec.com", password: "password", admin: true)
+		 expect(user).to be_valid
+	end 
+
 	it "is invalid  withouth a name"
 	it "is invalid with a name smaller than 3"
 	it "is invalid with a name bigger than 50"

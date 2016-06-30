@@ -11,7 +11,11 @@ describe User do
 		 user = User.create(name: nil, email: "alex3@alexswiec.com", password: "password", admin: true)
            expect(user.errors[:name]).to include("can't be blank", "is too short (minimum is 3 characters)") 
 	end 
-	it "is invalid with a name smaller than 3"
+
+	it "is invalid with a name smaller than 3"  do 
+		 user = User.create(name: "AA", email: "alex3@alexswiec.com", password: "password", admin: true)
+           expect(user.errors[:name]).to include("is too short (minimum is 3 characters)") 
+	end 
 	it "is invalid with a name bigger than 50"
 	it "is invalid without an email"
 	it "is invalid with an email longer than 105 characters"

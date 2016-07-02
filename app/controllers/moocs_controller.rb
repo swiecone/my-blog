@@ -5,7 +5,8 @@ class MoocsController < ApplicationController
 		@moocs = Mooc.all
 		@platforms = Platform.all
 		@institutions = Institution.all
-    @certificates = Certificate.first
+    @certificates = Certificate.all 
+
 
 	end 
 

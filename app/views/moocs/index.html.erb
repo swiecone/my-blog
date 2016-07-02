@@ -50,8 +50,11 @@
                                 OFFICIAL CERTIFICATE:
 
                                 <span style="font-style: italic">
-                                  <%= link_to "#{@certificates.licenceid}", @certificates.url , target: '_blank' %>
+                                  <%= 
+
+                                  link_to @certificates.find(mooc.certificate_id).licenceid, @certificates.find(mooc.certificate_id).url , target: '_blank' %>
                                   </span>
+
                                   <% else %>
                                   <span style="font-style: italic">  No official certification obtained </span>
 

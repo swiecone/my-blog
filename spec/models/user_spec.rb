@@ -38,6 +38,15 @@ describe User do
            expect(user.errors[:email]).to include("can't be blank", "is too short (minimum is 7 characters)") 
 	end 
 
+	it "is invalid with a duplicate email address" do
+		   User.create(name: "Alex", email: "tester@tester.com", password: "password", admin: true)
+       
+     	user = User.create(name: "Alicia", email: "tester@tester.com", password: "password", admin: true)
+
+    	 user.valid?
+	     expect(user.errors[:email]).to include("has already been taken")
+   end
+
 	it "is invalid without  a password"
 	it "is invalid without admin"
 end 

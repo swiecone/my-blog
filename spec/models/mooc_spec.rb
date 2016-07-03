@@ -1,30 +1,5 @@
 require 'rails_helper'
 
-# create_table "moocs", force: :cascade do |t|
-#     t.string   "title"
-#     t.string   "shortsummary"
-#     t.text     "longsummary"
-#     t.string   "status"
-#     t.datetime "created_at",        null: false
-#     t.datetime "updated_at",        null: false
-#     t.integer  "rating"
-#     t.integer  "platform_id"
-#     t.string   "url"
-#     t.integer  "institution_id"
-#     t.string   "thumburl"
-#     t.boolean  "has_certification"
-#     t.integer  "certificate_id"
-#   end
-
- # has_many :categories
- #   has_one :certificate
- #   belongs_to :platform
- #   belongs_to :institution
- #   validates :title, presence: true ,  length: { minimum: 10, maximum: 200 }
- #   validates :shortsummary, presence: true ,  length: { minimum: 30, maximum: 400 }
- #   validates :platform_id, presence: true 
- #   validates :institution_id, presence: true  
-
 describe Mooc do 
    it "is valid with title, platform, short summary, status, platform_id, url, institution_id, urltomooc and has_certification" do 
       mooc = Mooc.new(title: "Design of Social Surveys", 

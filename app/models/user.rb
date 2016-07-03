@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 							uniqueness: { case_sensitive: false },
 							uniqueness: true,
 							format: { with: VALID_EMAIL_REGEX }
+	validates :admin, presence: true
+	validates :admin, inclusion: { in: [true, false], message: "%{value} is not a Boolean" }
 
 end
 

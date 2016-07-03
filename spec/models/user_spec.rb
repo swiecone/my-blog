@@ -54,5 +54,15 @@ describe User do
 	     expect(user.errors[:password]).to include("can't be blank") 
 	end 
 
-	it "is invalid without admin"
+	it "is invalid without admin"  do 
+     	user = User.new(name: "Alicia", email: "tester@tester.com", password: "password", admin: nil)
+    	 user.valid?
+	     expect(user.errors[:admin]).to include("can't be blank") 
+	end 
+
+	it "is invalid with invalid admin"  do 
+     	user = User.new(name: "Alicia", email: "tester@tester.com", password: "password", admin: "Admin")
+    	 user.valid?
+	     expect(user.errors[:admin]).to include("Admin is not a Boolean") 
+	end 
 end 

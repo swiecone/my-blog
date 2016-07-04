@@ -4,7 +4,17 @@ class BooksController < ApplicationController
   before_action :require_user, only: [:new, :create]
   
   def index
-        @books = Book.all
+        if (params[:sort] == "title" )
+            @books = Book.all.order("title ASC")
+
+        elsif (params[:sort] == "date" )
+            @books = Book.all.order("read DESC")
+
+        elsif (params[:sort] == "rating" )
+            @books = Book.all.order("rating DESC")
+        else
+            @books = Book.all.order("rating DESC")
+        end 
   end
 
   def new

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :platform do
-    name ""
-    url "MyString"
+    name "Coursera"
+    url "http://www.coursera.org"
   end
 end

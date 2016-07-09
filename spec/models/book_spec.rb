@@ -23,12 +23,12 @@ require 'rails_helper'
 
 describe Book do 
 	it "is valid with isbn, title, shortsummary, status and thumburl" do 
-		book = Book.new(isbn: "0123456789", 
-						title: "Book Title",
-						shortsummary: "Short Summary of the book and it should be longer",
-						status: "Reading",
-						thumburl: "http://Thumburl.html")
-		expect(book).to be_valid
+		#book = Book.new(isbn: "0123456789", 
+		#				title: "Book Title",
+		#				shortsummary: "Short Summary of the book and it should be longer",
+		#				status: "Reading",
+		#				thumburl: "http://Thumburl.html")
+		expect(FactoryGirl.build(:book)).to be_valid
 	end 
 
 	it "is not valid without isbn" do 
@@ -57,6 +57,20 @@ describe Book do
 						status: "Reading",
 						thumburl: "http://Thumburl.html")
 			expect(book).not_to be_valid
+	end 
+
+	it "is invalid if the isbn inserted already exists" do 
+			book = Book.create(isbn: "0123456789", 
+						title: "Book Title",
+						shortsummary: "Short Summary of the book and it should be longer",
+						status: "Reading",
+						thumburl: "http://Thumburl.html")
+			book2 = Book.create(isbn: "0123456789", 
+						title: "Book Title 2",
+						shortsummary: "Short Summary of the book and it should be longer",
+						status: "Reading",
+						thumburl: "http://Thumburl.html")
+			expect(book2.errors[:isbn]).to include("has already been taken")
 	end 
 
 	it "is not valid without title" do 

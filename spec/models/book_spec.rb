@@ -33,12 +33,9 @@ describe Book do
 	end 
 
 	it "has an isbn shorter than 10 characters" do 
-			book = Book.new(isbn: "0123", 
-						title: "Book Title",
-						shortsummary: "Short Summary of the book and it should be longer",
-						status: "Reading",
-						thumburl: "http://Thumburl.html")
-			expect(book).not_to be_valid
+			book = FactoryGirl.build(:book, isbn: "123")
+			book.valid?
+			expect(book.errors[:isbn]).to include("is too short (minimum is 10 characters)")
 	end 
 
 	it "has an isbn longer than 13 characters" do 

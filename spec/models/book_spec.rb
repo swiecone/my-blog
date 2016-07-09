@@ -23,21 +23,13 @@ require 'rails_helper'
 
 describe Book do 
 	it "is valid with isbn, title, shortsummary, status and thumburl" do 
-		#book = Book.new(isbn: "0123456789", 
-		#				title: "Book Title",
-		#				shortsummary: "Short Summary of the book and it should be longer",
-		#				status: "Reading",
-		#				thumburl: "http://Thumburl.html")
 		expect(FactoryGirl.build(:book)).to be_valid
 	end 
 
-	it "is not valid without isbn" do 
-			book = Book.new(isbn: nil, 
-						title: "Book Title",
-						shortsummary: "Short Summary of the book and it should be longer",
-						status: "Reading",
-						thumburl: "http://Thumburl.html")
-			expect(book).not_to be_valid
+	it "is not valid without isbn" do
+		book = FactoryGirl.build(:book, isbn: nil)
+		book.valid?
+		expect(book.errors[:isbn]).to include("can't be blank", "is too short (minimum is 10 characters)")
 	end 
 
 	it "has an isbn shorter than 10 characters" do 

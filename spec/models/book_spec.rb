@@ -40,25 +40,16 @@ describe Book do
 
 	it "has an isbn longer than 13 characters" do 
 			@isbn = "0" * 14
-			book = Book.new(isbn: @isbn, 
-						title: "Book Title",
-						shortsummary: "Short Summary of the book and it should be longer",
-						status: "Reading",
-						thumburl: "http://Thumburl.html")
-			expect(book).not_to be_valid
+			book = FactoryGirl.build(:book, isbn: @isbn)
+			book.valid?
+			expect(book.errors[:isbn]).to include("is too long (maximum is 13 characters)")
 	end 
 
 	it "is invalid if the isbn inserted already exists" do 
-			book = Book.create(isbn: "0123456789", 
-						title: "Book Title",
-						shortsummary: "Short Summary of the book and it should be longer",
-						status: "Reading",
-						thumburl: "http://Thumburl.html")
-			book2 = Book.create(isbn: "0123456789", 
-						title: "Book Title 2",
-						shortsummary: "Short Summary of the book and it should be longer",
-						status: "Reading",
-						thumburl: "http://Thumburl.html")
+			book = FactoryGirl.build(:book)
+			book.save
+			book2 = FactoryGirl.build(:book)
+			book2.save
 			expect(book2.errors[:isbn]).to include("has already been taken")
 	end 
 

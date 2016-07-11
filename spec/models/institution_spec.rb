@@ -28,8 +28,8 @@ describe Institution do
 		expect(institution).not_to be_valid
 	end 
 
-	it "is invalid with name more than 20" do 
-		long_name = "A" * 21
+	it "is invalid with name more than 50" do 
+		long_name = "A" * 51
 		institution = Institution.new(name: long_name, 
 						url: "http://www.harvard.com",
 						thumburl: "http://www.thanks.com")

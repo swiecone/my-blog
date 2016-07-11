@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Book do 
 	it "is valid with isbn, title, shortsummary, status and thumburl" do 
-		expect(FactoryGirl.build(:book)).to be_valid
+		expect(build(:book)).to be_valid
 	end 
 
 	it "is not valid without isbn" do

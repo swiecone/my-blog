@@ -2,17 +2,14 @@ require 'rails_helper'
 
 describe Certificate do 
 	it "is valid with name, url and licenceid" do 
-		certificate = Certificate.new(name: "pmp certificate", 
-						url: "http://www.certificate.com",
-						licenceid: "421332423424")
-		expect(certificate).to be_valid
+		expect(build(:certificate)).to be_valid
 	end 
 
 	it "is invalid without name" do 
-		certificate = Certificate.new(name: nil, 
-						url: "http://www.certificate.com",
-						licenceid: "421332423424")
-		expect(certificate).not_to be_valid
+		certificate = build(:certificate, name: nil)
+		certificate.valid?
+		debugger
+		expect(certificate.errors[:name]).to include("can't be blank", "is too short (minimum is 3 characters)")
 	end 
 
 	it "is invalid with name less than 3" do 

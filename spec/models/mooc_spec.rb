@@ -1,54 +1,29 @@
 require 'rails_helper'
 
 describe Mooc do 
-   it "is valid with title, platform, short summary, status, platform_id, url, institution_id, urltomooc and has_certification" do 
-      mooc = Mooc.new(title: "Design of Social Surveys", 
-                     shortsummary: "The fucking course is awesome!!",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.moocs.com",
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-            expect(mooc).to be_valid
+   it "is valid with title, platform, short summary, status, platform_id, url, institution_id, urltomooc and has_certification" do
+            expect(build(:mooc)).to be_valid
    end 
 
   it "is invalid without a title" do 
-      mooc = Mooc.create(title: nil, 
-                     shortsummary: "The fucking course is awesome!!",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.moocs.com",
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-           expect(mooc.errors[:title]).to include("can't be blank", "is too short (minimum is 5 characters)") 
-    end 
+      mooc = build(:mooc, title: nil)
+      mooc.valid?
+      expect(mooc.errors[:title]).to include("can't be blank", "is too short (minimum is 5 characters)") 
+   end 
 
   it "is invalid with a title shorter than 5" do 
-      mooc = Mooc.create(title: "AAA", 
-                     shortsummary: "The fucking course is awesome!!",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.moocs.com",
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-           expect(mooc.errors[:title]).to include("is too short (minimum is 5 characters)") 
-    end 
+     mooc = build(:mooc, title: "ABC")
+     mooc.valid?
+    expect(mooc.errors[:title]).to include("is too short (minimum is 5 characters)") 
+  end 
 
   it "is invalid with a title longer than 100" do 
       title = "A" * 101
-      mooc = Mooc.create(title: title, 
-                     shortsummary: "The fucking course is awesome!!",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.moocs.com",
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-           expect(mooc.errors[:title]).to include("is too long (maximum is 100 characters)") 
+      mooc = build(:mooc, title: title)
+      mooc.valid?
+      expect(mooc.errors[:title]).to include("is too long (maximum is 100 characters)") 
     end 
+
   it "is invalid without a short summary" do 
       mooc = Mooc.create(title: "Design of Social Surveys", 
                      shortsummary: nil,

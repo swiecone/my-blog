@@ -25,114 +25,60 @@ describe Mooc do
     end 
 
   it "is invalid without a short summary" do 
-      mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: nil,
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.moocs.com",
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-           expect(mooc.errors[:shortsummary]).to include("can't be blank", "is too short (minimum is 30 characters)") 
+      mooc = build(:mooc, shortsummary: nil)
+      mooc.valid?
+      expect(mooc.errors[:shortsummary]).to include("can't be blank", "is too short (minimum is 30 characters)") 
    end 
 
   it "is invalid with a short summary less than 30" do 
-      mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: "short summary :(",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.moocs.com",
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-           expect(mooc.errors[:shortsummary]).to include("is too short (minimum is 30 characters)") 
+      mooc = build(:mooc, shortsummary: "This summary is invalid!")
+      mooc.valid?
+      expect(mooc.errors[:shortsummary]).to include("is too short (minimum is 30 characters)") 
    end 
 
   it "is invalid with a short summary more than 400" do 
-    longsummary = "A" * 401
-      mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: longsummary,
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.moocs.com",
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-           expect(mooc.errors[:shortsummary]).to include("is too long (maximum is 400 characters)") 
+    long_summary = "A" * 401
+      mooc = build(:mooc, shortsummary: long_summary)
+      mooc.valid?
+      expect(mooc.errors[:shortsummary]).to include("is too long (maximum is 400 characters)") 
    end 
 
   it "is invalid without a url" do 
-      mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: "short summary is a short summary and it should be enough for the test",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: nil,
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-           expect(mooc.errors[:url]).to include( "can't be blank" , "is too short (minimum is 11 characters)") 
+      mooc = build(:mooc, url: nil)
+      mooc.valid?
+      expect(mooc.errors[:url]).to include( "can't be blank" , "is too short (minimum is 11 characters)") 
    end 
 
 
 
   it "is invalid with a url shorter than 11"  do
-        mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: "short summary is a short summary and it should be enough for the test",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www",
-                     institution_id: 1,
-                     thumburl: "http://www.mepareceunaaberracion.com", 
-                     has_certification: true)
-           expect(mooc.errors[:url]).to include( "is too short (minimum is 11 characters)") 
+      mooc = build(:mooc, url: "url")
+      mooc.valid?
+      expect(mooc.errors[:url]).to include( "is too short (minimum is 11 characters)") 
    end 
 
   it "is invalid without a thumburl" do 
-     mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: "short summary is a short summary and it should be enough for the test",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.coursera.org",
-                     institution_id: 1,
-                     thumburl: nil, 
-                     has_certification: true)
-           expect(mooc.errors[:thumburl]).to include( "can't be blank" , "is too short (minimum is 11 characters)") 
+      mooc = build(:mooc, thumburl: nil)
+      mooc.valid?
+      expect(mooc.errors[:thumburl]).to include( "can't be blank" , "is too short (minimum is 11 characters)") 
   end 
 
   it "is invalid with a thumburl shorter than 11" do 
-     mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: "short summary is a short summary and it should be enough for the test",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.coursera.org",
-                     institution_id: 1,
-                     thumburl: "http://www", 
-                     has_certification: true)
-           expect(mooc.errors[:thumburl]).to include( "is too short (minimum is 11 characters)") 
+      mooc = build(:mooc, thumburl: "url")
+      mooc.valid?
+      expect(mooc.errors[:thumburl]).to include( "is too short (minimum is 11 characters)") 
   end 
 
   it "is invalid without a platform_id" do 
-     mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: "short summary is a short summary and it should be enough for the test",
-                     status: "In progress",
-                     platform_id: nil, 
-                     url: "http://www.coursera.org",
-                     institution_id: 1,
-                     thumburl: "http://www.thumb.com", 
-                     has_certification: true)
-           expect(mooc.errors[:platform_id]).to include("can't be blank") 
+      mooc = build(:mooc, platform_id: nil)
+      mooc.valid?
+      expect(mooc.errors[:platform_id]).to include("can't be blank") 
   end 
 
   it "is imvalid without institution_id" do 
-     mooc = Mooc.create(title: "Design of Social Surveys", 
-                     shortsummary: "short summary is a short summary and it should be enough for the test",
-                     status: "In progress",
-                     platform_id: 1, 
-                     url: "http://www.coursera.org",
-                     institution_id: nil,
-                     thumburl: "http://www.thumb.com", 
-                     has_certification: true)
-           expect(mooc.errors[:institution_id]).to include("can't be blank") 
+      mooc = build(:mooc, institution_id: nil)
+      mooc.valid? 
+      expect(mooc.errors[:institution_id]).to include("can't be blank") 
   end 
 
 end

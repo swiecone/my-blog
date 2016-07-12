@@ -11,43 +11,31 @@ require 'rails_helper'
 
 describe Contact do 
 	it "is valid with name, phone, message and email" do 
-		contact = Contact.new(name: "Alex", 
-							  phone: "1234562334", 
-							  message: "this is a message for you", 
-							  email: "alex@alex.com")
-		expect(contact).to be_valid
+		expect(build(:contact)).to be_valid
 	end 
 
 	it "is not valid without a name" do 
-		contact = Contact.new(name: nil, 
-							  phone: "1234562334", 
-							  message: "this is a message for you", 
-							  email: "alex@alex.com")
-		expect(contact).not_to be_valid
+		contact = build(:contact, name: nil)
+		contact.valid?
+		expect(contact.errors[:name]).to include("can't be blank")
 	end 
 
 	it "is not valid without a phone" do 
-		contact = Contact.new(name: "Alex", 
-							  phone: nil, 
-							  message: "this is a message for you", 
-							  email: "alex@alex.com")
-		expect(contact).not_to be_valid
+		contact = build(:contact, phone: nil)
+		contact.valid?
+		expect(contact.errors[:phone]).to include("can't be blank")
 	end 
 
 	it "is not valid without a message" do 
-		contact = Contact.new(name: "Alex", 
-							  phone: nil, 
-							  message: nil, 
-							  email: "alex@alex.com")
-		expect(contact).not_to be_valid
+		contact = build(:contact, message: nil)
+		contact.valid?
+		expect(contact.errors[:message]).to include("can't be blank")
 	end 
 
 	it "is not valid without an email" do 
-		contact = Contact.new(name: "Alex", 
-							  phone: nil, 
-							  message: "this is a message for you", 
-							  email: nil)
-		expect(contact).not_to be_valid
+		contact = build(:contact, email: nil)
+		contact.valid?
+		expect(contact.errors[:email]).to include("can't be blank")
 	end 
 
 end 

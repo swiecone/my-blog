@@ -4,12 +4,12 @@
 
 <div class="container">
 
-    <p> In this page you can find books I've read.  I want to write a summary of each of the books I've read and put my personal lessons, and in order to do this, I will need to read them again. You can also find books by their ISBN through <%= link_to "this page", findabook_path %>
-    this page </p>  
+    In this page you can find books I've read.  I want to write a summary of each of the books I've read and put my personal lessons, and in order to do this, I will need to read them again. You can also find books by their ISBN through <%= link_to "this page", findabook_path %>
+    this page 
     
-    <p> If currently reading, you will see a yellow label that states <span class="label label-warning">In Progress</span> and if already read, you will have a label that says <span class="label label-success">Read</span>, and the day I finished the book.  If you think I should include a book to my "to read" list, please do let me know though email <a href="mailto:alex@alexswiec.com?subject=Want to recommend you a book">alex@alexswiec.com</a> or through the <a title="contact form" href=" contact.html">contact form</a> </p>
+    <p> If currently reading, you will see a yellow label that states <span class="label label-warning">In Progress</span> and if already read, you will have a label that says <span class="label label-success">Read</span>, and the day I finished the book.  Please do let me know the books you would recommend me through the <a title="contact form" href=" contact.html">contact form</a>!! </p>
 
-<p style="margin-bottom: 80px"><strong>My recommendations at the top</strong>, or sort by:
+<p style="margin-bottom: 80px"><strong>My book recommendations at the top</strong>, or sort by:
     <a href="/books?sort=title" id="sort-title">title</a>,
     <a href="/books?sort=date" id="sort-date">newest</a>, or
     <a href="/books?sort=rating" id="sort-rating">best</a>.
@@ -17,6 +17,9 @@
 <hr>
 
     <!-- Main Content -->
+
+<div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
      <% @books.each do |book| %>
                         <figure class="abook" data-rating="10" data-title="So Good They Can't Ignore You - by Cal Newport" data-date="2012-10-07" style="margin-bottom: 100px">
                             <span style="float:left;padding-right: 15px;"><%= image_tag book.thumburl%></span>

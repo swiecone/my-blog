@@ -2,9 +2,21 @@
 
     <!-- Main Content -->
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      
 
+    In this page you can find MOOCs I've studied or I'm studying.  I want to write a summary of each of the MOOCs I've taken part in and put my personal learnings that could help you move forward in your learning, and maybe understand if the course is good for your career progression. The challenge is that in order to do this, I will need to review the MOOCs, which takes time!
+    
+    <p> If currently studying, you will see a yellow label that states <span class="label label-warning">Studying</span> and if already completed, you will have a label that says <span class="label label-success">Completed</span>, and the day I finished the MOOC.  Please do let me know the MOOCs you would recommend me through the <a title="contact form" href=" contact.html">contact form</a>!! </p>
+
+<p><strong>My MOOC recommendations at the top</strong>, or sort by:
+    <a href="/moocs?sort=title" id="sort-title">MOOC name</a>,
+    <a href="/moocs?sort=date" id="sort-date">newest</a>, or
+    <a href="/moocs?sort=rating" id="sort-rating">best</a>.
+</p>
+<hr>
+
+  <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
     <!-- Main Content -->
      <% @moocs.each do |mooc| %>
                         <figure>
@@ -68,7 +80,6 @@
             <% end %>
 
            </div>
-        </div>
+      </div>
     </div>
-
     <hr>

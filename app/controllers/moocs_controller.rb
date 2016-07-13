@@ -2,11 +2,20 @@ class MoocsController < ApplicationController
   before_action :require_user, only: [:new, :create]
 
 	def index
-		@moocs = Mooc.all
+		@moocs = Mooc.all.order("rating DESC")
 		@platforms = Platform.all
 		@institutions = Institution.all
     @certificates = Certificate.all 
 
+    if (params[:sort] == "title" )
+            @moocs = Mooc.all.order("title ASC")
+
+#        elsif (params[:sort] == "date" )
+ #           @moocs = Book.all.order("read DESC")
+
+        elsif (params[:sort] == "rating" )
+            @moocs = Mooc.all.order("rating DESC")
+        end 
 
 	end 
 

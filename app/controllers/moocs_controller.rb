@@ -2,18 +2,7 @@ class MoocsController < ApplicationController
   before_action :require_user, only: [:new, :create]
 
 	def index
-		@allmoocs = Mooc.all
-    @moocs = []
-    @allmoocs.each do |mooc|
-      if mooc.finish_date =! nil 
-          @moocs.push(mooc)
-              debugger
-
-      end 
-    end  
-
-lorem
-
+		@moocs = Mooc.all
 		@platforms = Platform.all
 		@institutions = Institution.all
     @certificates = Certificate.all 

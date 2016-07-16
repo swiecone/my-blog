@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627082442) do
+ActiveRecord::Schema.define(version: 20160714214732) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160627082442) do
     t.string   "thumburl"
     t.boolean  "has_certification"
     t.integer  "certificate_id"
+    t.date     "finish_date"
   end
 
   create_table "platforms", force: :cascade do |t|

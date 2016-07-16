@@ -72,6 +72,13 @@
 
                                   <% end %>  
 
+                                  <% if mooc.finish_date != nil %> 
+                                    <br>
+                                    FINISH DATE: 
+                                       <span style="font-style: italic"> 
+                                      <%= mooc.finish_date %></span>
+                                  <% end %>
+
                         <p><%= mooc.shortsummary %></p>
 
 

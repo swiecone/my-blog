@@ -43,14 +43,16 @@
                     </span>
 
                     STATUS: 
-                    <% if mooc.status == "In Progress" %>
+                    <% if mooc.status == "Studying" %>
                             <span style="font-style: italic"> Studying</span>
                     <% else %>
+
+
                           <span style="font-style: italic">  finished on  <%= mooc.finish_date.try(:strftime, '%B %Y') %></span>
                     <% end %> 
 
                             RATING:
-                                     <% if mooc.status == "In Progress" %>
+                                     <% if mooc.status == "Studying" %>
                                         <span style="font-style: italic">tbd. </span>
                                     <% else %>
                                        <span style="font-style: italic">  <%= mooc.rating %>/10

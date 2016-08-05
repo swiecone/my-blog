@@ -51,7 +51,7 @@
                           <span style="font-style: italic">  finished on  <%= mooc.finish_date.try(:strftime, '%B %Y') %></span>
                     <% end %> 
 
-                            RATING:
+                            <br>RATING:
                                      <% if mooc.status == "Studying" %>
                                         <span style="font-style: italic">tbd. </span>
                                     <% else %>
@@ -59,19 +59,15 @@
                                         </span>
                                     <% end %> 
 
-                            <br>
+                            
                                   <% if mooc.has_certification == true %>
-                                OFFICIAL CERTIFICATE:
+                             OFFICIAL CERTIFICATE:
 
                                 <span style="font-style: italic">
                                   <%= 
 
                                   link_to @certificates.find(mooc.certificate_id).licenceid, @certificates.find(mooc.certificate_id).url , target: '_blank' %>
                                   </span>
-
-                                  <% else %>
-                                  <span style="font-style: italic">  No official certification obtained </span>
-
                                   <% end %>  
 
                                   

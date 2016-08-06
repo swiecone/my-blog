@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   post '/mail/contact_me.php' => 'static_pages#thankyou' 
   get 'post'   => 'static_pages#post'
   get 'now' => 'static_pages#now'
+  get 'historicnow' => 'static_pages#historicnow'
   get 'english' => 'static_pages#english'
   get 'spanish' => 'static_pages#spanish'
   get 'advise' => 'static_pages#advise'

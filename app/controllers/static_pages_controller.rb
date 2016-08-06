@@ -28,6 +28,9 @@ class StaticPagesController < ApplicationController
   def now
   end 
 
+  def historicnow
+  end 
+
   def advise
   end 
 

@@ -2,7 +2,7 @@ class MoocsController < ApplicationController
   before_action :require_user, only: [:new, :create]
 
 	def index
-		@moocs = Mooc.all
+		@moocs = Mooc.all.order("finish_date DESC")
 		@platforms = Platform.all
 		@institutions = Institution.all
     @certificates = Certificate.all 

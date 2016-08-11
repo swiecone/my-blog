@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   # get 'moocs' => 'static_pages#moocs'
   get 'findabook' => 'books#findabook'
   post 'findabook' => 'books#fabresult'
+  get 'googleace6cb64121709ba.html' => 'static_pages#googlesc'
 
   # posts 
   get 'mindfulrw' => 'post#mindfulrw'

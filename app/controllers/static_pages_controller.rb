@@ -80,6 +80,9 @@ class StaticPagesController < ApplicationController
 
   end 
 
+  
+  
+
  private 
 
   # def contact_params

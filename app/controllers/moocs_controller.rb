@@ -32,7 +32,6 @@ class MoocsController < ApplicationController
     @mooc.rating = params[:rating]
     @mooc.url = params[:url]
     @mooc.thumburl = params[:thumburl]
-    debugger
 
     if @mooc.save
       flash[:success] = "Your MOOC was created successfully!"

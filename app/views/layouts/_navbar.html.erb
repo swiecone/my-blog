@@ -57,6 +57,7 @@
                               <%= current_user.name %>   <b class="caret"></b>
                         <% end %>
                         <ul class='dropdown-menu black-link'>
+                             <li><%= link_to "Historic Now", historicnow_path , style:"color:black" %></li>
                             <li><%= link_to "Add Book", new_book_path , style:"color:black" %></li>
                             <li><%= link_to "Add MOOC", new_mooc_path, style:"color:black" %></li>
                             <li><%= link_to "Messages", contacts_path , style:"color:black" %></li>

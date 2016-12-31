@@ -3,6 +3,9 @@ class StaticPagesController < ApplicationController
   #@english_language = true
   
   skip_before_filter :verify_authenticity_token
+   before_action :require_user, only: [:historicnow]
+
+
 
   def home
   end

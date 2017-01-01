@@ -43,7 +43,7 @@
                         <figure style="margin-bottom: 100px">
                             <span style="float:left;padding-right: 15px;"> <%= image_tag book.thumburl %></span>
                             <figcaption>
-                                <h3> <%= link_to "#{book.title}", book_path(book) %>
+                                <h3> <%= book.title %>
 
 
 
@@ -99,7 +99,7 @@
                                 <%= image_tag mooc.thumburl%></a>
                             <figcaption>
                                 <h3>
-                                <%= link_to "#{mooc.title}", mooc_path(mooc) %>
+                                <%= mooc.title %>
                            
                             </a>
 

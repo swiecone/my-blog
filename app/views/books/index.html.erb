@@ -25,7 +25,7 @@
                             <span style="float:left;padding-right: 15px;"><%= image_tag book.thumburl%></span>
                             <figcaption>
                                 <h3>
-                                <%= link_to "#{book.title}", book_path(book) %>
+                                <%= book.title %>
                             </a>
                  <% if book.status == "In Progress" %>
                         <span class="label label-warning" style="margin-left: 15px; font-size:60%">

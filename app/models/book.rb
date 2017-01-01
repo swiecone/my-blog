@@ -4,5 +4,5 @@ class Book < ActiveRecord::Base
 	validates :title, presence: true 	
 	validates :shortsummary, presence: true
 	validates :status, presence: true
-	validates :thumburl, presence: true ,  length: { minimum: 11 }
+	validates :thumburl, presence: true 
 end

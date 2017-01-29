@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get 'consciouspm' => 'post#consciouspm'
   get 'language' => 'post#language'
   get 'takesanetwork' => 'post#takesanetwork'
+  get 'millionaire' => 'books#millionaire'
 
 
   # login and logout to the site

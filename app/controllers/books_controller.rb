@@ -55,6 +55,9 @@ class BooksController < ApplicationController
     @isbn = params[:q]  
   end
 
+  def millionaire
+  end 
+
 
 private
   def books_params

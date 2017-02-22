@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get 'language' => 'post#language'
   get 'takesanetwork' => 'post#takesanetwork'
   get 'millionaire' => 'books#millionaire'
+  get 'cocreate' => 'post#cocreate'
 
 
   # login and logout to the site

@@ -21,5 +21,7 @@ class PostController < ApplicationController
 	def consciouspm
 	end
 
+	def cocreate
+	end
 
 end

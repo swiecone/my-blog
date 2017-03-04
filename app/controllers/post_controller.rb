@@ -24,4 +24,7 @@ class PostController < ApplicationController
 	def cocreate
 	end
 
+	def integration
+	end 
+
 end

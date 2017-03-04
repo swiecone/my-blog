@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get 'takesanetwork' => 'post#takesanetwork'
   get 'millionaire' => 'books#millionaire'
   get 'cocreate' => 'post#cocreate'
+  get 'integration' => 'post#integration'
 
 
   # login and logout to the site

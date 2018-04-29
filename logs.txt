@@ -78,7 +78,7 @@
 2016-06-11T22:26:48.243614+00:00 app[web.1]: => Ctrl-C to shutdown server
 2016-06-11T22:26:48.243594+00:00 app[web.1]: => Run `rails server -h` for more startup options
 2016-06-11T22:26:48.243638+00:00 app[web.1]: Started GET "/moocs/new" for 46.136.118.59 at 2016-06-11 22:26:48 +0000
-2016-06-11T22:26:48.375672+00:00 app[web.1]:   Rendered layouts/_messages.html.erb (1.2ms)
+20016-06-11T22:26:48.375672+00:00 app[web.1]:   Rendered layouts/_messages.html.erb (1.2ms)
 2016-06-11T22:26:48.411416+00:00 app[web.1]:   Rendered moocs/new.html.erb within layouts/application (42.6ms)
 2016-06-11T22:26:48.411648+00:00 app[web.1]: Completed 500 Internal Server Error in 112ms (ActiveRecord: 8.0ms)
 2016-06-11T22:26:48.414105+00:00 app[web.1]: 

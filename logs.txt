@@ -98,4 +98,4 @@
 2016-06-11T22:26:48.414131+00:00 app[web.1]:   app/views/moocs/new.html.erb:8:in `_app_views_moocs_new_html_erb__2100097598669412977_70242531218360'
 2016-06-11T22:26:48.414132+00:00 app[web.1]: 
 2016-06-11T22:26:48.414133+00:00 app[web.1]: 
-2016-06-11T22:26:48.419842+00:00 heroku[router]: at=info method=GET path="/moocs/new" host=alexswiec.herokuapp.com request_id=6bc847da-b9db-4f7a-a521-2799752d5919 fwd="46.136.118.59" dyno=web.1 connect=1ms service=178ms status=500 bytes=1754
+ias2016-06-11T22:26:48.419842+00:00 heroku[router]: at=info method=GET path="/moocs/new" host=alexswiec.herokuapp.com request_id=6bc847da-b9db-4f7a-a521-2799752d5919 fwd="46.136.118.59" dyno=web.1 connect=1ms service=178ms status=500 bytes=1754
